@@ -1,0 +1,15 @@
+#compile
+javac -cp<optional> {path-of-dependencies} -d {path-of-output-file} {path-of-java-input-files}
+
+#execute
+java -cp {path-of-class-files;path-of-dependencies} {package.class-name-without-extension}
+java -jar {file-name.jar}
+
+#jar
+jar cmfv {manifest-path-file} {jar-file-path-and-name-output} {path-of-class-files}
+
+
+#Manifest-Version: 1.0
+#Created-By: 11.0.10 (Oracle Corporation)
+#Main-Class: hng.Tester
+#Class-Path: . {path-jar-files}

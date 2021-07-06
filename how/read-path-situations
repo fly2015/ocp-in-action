@@ -1,0 +1,20 @@
+#read server path from a servlet
+servletContext.getRealPath("/");
+servletContext.getContextPath();
+
+#read path from java in debug/ unit test
+System.getProperty("user.dir");
+java.nio.file.FileSystems.getDefault().getPath("").toAbsolutePath();
+
+#read path from java running in a web server
+this.getClass().getClassLoader().getResource("/").getPath();
+
+##spring
+ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+Resource res = resolver.getResource("/td-web/configurable-risk-report-template/" + templateName);
+
+ResourceBundle resourceBundle = ResourceBundle.getBundle(BASE_NAME, ServiceRequestContextHolder.getServiceRequestContext().getLocale());
+
+## crif
+ResourceLoaderFactory.getInstance().getResourceLoader().getResource(REQUEST_MAPPING_PATH);
+ResourceLoaderFactory.getInstance().getClass().getClassLoader().getResource(path + Constants.FILENAME);
