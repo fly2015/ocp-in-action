@@ -16,8 +16,6 @@ import java.util.List;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.util.TraceClassVisitor;
 
-import java21.com.generic.sdo.Animal;
-import java21.com.generic.sdo.Dog;
 
 /**
  * 
@@ -30,7 +28,7 @@ public class Tester
     public static void main(String[] args)
     {
         try {
-            ClassReader reader = new ClassReader("java21.com.generic.classes.CrateTest");
+            ClassReader reader = new ClassReader("java21.com.generic.doc.NonReifiableTypes");
             StringWriter sw = new StringWriter();
             TraceClassVisitor tcv = new TraceClassVisitor(new PrintWriter(System.out));
             reader.accept(tcv, 0);
@@ -40,6 +38,8 @@ public class Tester
         
        
     }
+    
+   
 }
 
 

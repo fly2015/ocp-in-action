@@ -15,7 +15,9 @@ package java21.com.inheritance;
  */
 public class Drink extends Product
 {
-
+	public void print()
+	{
+	}
 }
 
 

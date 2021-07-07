@@ -22,6 +22,8 @@ public abstract class Parent
     
     protected abstract void check();
     protected abstract void check1();
+    
+    
 }
 
 

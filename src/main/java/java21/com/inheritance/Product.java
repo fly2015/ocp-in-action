@@ -15,6 +15,10 @@ package java21.com.inheritance;
  */
 public class Product extends Parent
 {
+	public void print()
+	{
+	}
+	
     public String getProductName() {
         return "";
     }
