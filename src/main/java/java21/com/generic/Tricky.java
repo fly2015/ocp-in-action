@@ -56,6 +56,13 @@ public class Tricky
         ln.add(10_00);
         
         lany = ln;
+        
+        // tricky 7
+        List<Number> lS = new ArrayList<Number>();
+        lS.add(10_00);
+        lS.add(Integer.valueOf(10));
+        List<? extends Number> xx = new ArrayList<Number>();
+        lS.addAll(xx);
     }
 }
 
