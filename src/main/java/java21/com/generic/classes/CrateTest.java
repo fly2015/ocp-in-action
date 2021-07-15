@@ -9,6 +9,7 @@ package java21.com.generic.classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import java21.com.generic.sdo.Animal;
 import java21.com.generic.sdo.Dog;
@@ -21,6 +22,10 @@ import java21.com.generic.sdo.Dog;
  */
 public class CrateTest
 {
+    public static <T> Crate<T> unmodifiableSet(Crate<T> set) {
+        return set;
+     }
+    
     public static void main(String[] args)
     {
         // Crate of String
@@ -53,6 +58,10 @@ public class CrateTest
         Crate<List<String>> crateOfList = new Crate<List<String>>();
         crateOfList.packPackage(new ArrayList<String>());
         List<String> emptyPackage = crateOfList.emptyPackage();
+        
+        //
+        Crate<? extends Number> crate2 = new Crate<Number>();
+        Crate< ? extends Number> unmodifiableSet = unmodifiableSet(crate2);
     }
 }
 
