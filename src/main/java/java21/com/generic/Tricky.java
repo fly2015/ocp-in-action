@@ -9,7 +9,9 @@ package java21.com.generic;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java21.com.generic.sdo.Animal;
 import java21.com.generic.sdo.Dog;
@@ -63,6 +65,38 @@ public class Tricky
         lS.add(Integer.valueOf(10));
         List<? extends Number> xx = new ArrayList<Number>();
         lS.addAll(xx);
+        
+        // tricky 7
+        Map<String, Number> mapA = new HashMap<String, Number>();
+        mapA.put("A", 10__00);
+        mapA.put("B", 10.0_0d);
+        
+        Map<String, ? extends Number> mapB = new HashMap<String, Number>();
+        mapA.putAll(mapB);
+        mapB = mapA;
+        
+        // tricky 8
+        List<Number> listA = new ArrayList<Number>();
+        List<Integer> listC = new ArrayList<Integer>();
+        
+        Collection< ? extends Number> listB = new ArrayList<Number>();
+        listA.addAll(listB);
+        listA.addAll(listC);
+        
+        listB = listA;
+        listB = listC;
+    }
+    
+    public static void addAllDemo(List< ? extends Number> listB)
+    {
+        List<Number> listA = new ArrayList<Number>();
+        listA.addAll(listB);
+    }
+    
+    public static void putAllDemo(Map<String, ? extends Number> mapB)
+    {
+        Map<String, Number> mapA = new HashMap<String, Number>();
+        mapA.putAll(mapB);
     }
 }
 

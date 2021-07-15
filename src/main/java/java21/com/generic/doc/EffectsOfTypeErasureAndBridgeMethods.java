@@ -22,7 +22,11 @@ public class EffectsOfTypeErasureAndBridgeMethods {
 		}
 	}
 
-	public class MyNode extends Node<Integer> {
+	//Bridge Methods
+	//When compiling a class or interface that extends a parameterized class or implements a parameterized interface
+	//the compiler may need to create a synthetic method, which is called a bridge method, 
+	// as part of the type erasure process. You normally don't need to worry about bridge methods, but you might be puzzled if one appears in a stack trace.
+	public class MyNode extends Node<Integer> { 
 		
 		public MyNode() {}
 		public MyNode(Integer data) { super(data); }
@@ -43,4 +47,7 @@ public class EffectsOfTypeErasureAndBridgeMethods {
 		n.setData("Hello");     // Causes a ClassCastException to be thrown.
 		Integer x = mn.data;    
 	}
+	
+	
+	
 }

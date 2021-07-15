@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -34,7 +35,7 @@ public class LambdaTester
         System.out.println(comparator.compare("12344", "abc"));
         
         
-        
+	
       
         
     }

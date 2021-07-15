@@ -44,7 +44,10 @@ public class WildcardsAndSubtyping
         // lower bound
         List<Object> lObject = new ArrayList<Object>();
         List<? super Integer> lIntegerSupper = new ArrayList<Integer>();
+        lIntegerSupper.add(10_00); //tricky can only add lowest
+        
         List<? super Number> lNumberSupper = new ArrayList<Number>();
+        lNumberSupper.add(new Double(10.00)); //tricky can only add lowest
         
         lAny = lIntegerSupper;
         lAny = lNumberSupper;

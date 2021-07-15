@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.generic.classes;
+package java21.com.generic.book;
 
 import java21.com.generic.sdo.Animal;
 import java21.com.generic.sdo.Dog;
@@ -30,7 +30,7 @@ public class CrateAnimalTest
         
         // Case 3
         CrateAnimal<?> crateAnimal3 = new CrateAnimal<Animal>();
-        // crateAnimal3.packPackage(new Animal()); //-> DO NOT COMPILE
+        //crateAnimal3.packPackage(new Animal()); //-> DO NOT COMPILE
         Animal emptyPackage3 = crateAnimal3.emptyPackage();
         
         // Case 4
@@ -42,6 +42,10 @@ public class CrateAnimalTest
         CrateAnimal<? super Dog> crateAnimal5 = new CrateAnimal<Dog>();
         //crateAnimal5.packPackage(new Animal()); //-> DO NOT COMPILE
         Animal emptyPackage5 = crateAnimal5.emptyPackage();
+        
+        // Case 6
+        CrateAnimal<? super Dog> crateAnimal6 = new CrateAnimal<Dog>();
+        crateAnimal5.packPackage(new Dog()); //-> OK lowest type is a upper bound can accepted
         
     }
 }

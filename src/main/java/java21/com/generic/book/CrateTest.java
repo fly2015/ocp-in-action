@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.generic.classes;
+package java21.com.generic.book;
 
 import java.util.ArrayList;
 import java.util.List;
