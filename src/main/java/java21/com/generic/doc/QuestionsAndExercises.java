@@ -50,7 +50,7 @@ public class QuestionsAndExercises
 	
 	public static void main(String[] args) {
 		
-		// 1
+		// 1 
 		Collection<Integer> cNumbers = new ArrayList<Integer>();
 		cNumbers.add(1);
 		cNumbers.add(2);
@@ -60,8 +60,10 @@ public class QuestionsAndExercises
 		
 		System.out.println(countOldNumber(cNumbers));
 		
-		//2 -> No
+		//2 -> No since unkown object type Y does snot support > operator
 		max(4, 5);
+		
+		//3 
 		
 	}
 }
