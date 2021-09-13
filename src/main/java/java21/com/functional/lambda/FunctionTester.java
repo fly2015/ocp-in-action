@@ -1,4 +1,4 @@
-package java21.com.lambda;
+package java21.com.functional.lambda;
 
 import java.util.function.Function;
 
@@ -16,6 +16,12 @@ public class FunctionTester {
 		};
 
 		Integer sum = function.apply(ints);
-		System.out.println(sum);
+        System.out.println(sum);
+		
+		Function<Integer, Integer> function1 = (i1) -> {return i1 + 1;};
+        
+        
+        System.out.println(function.andThen(function1).apply(ints));
 	}	
+	
 }

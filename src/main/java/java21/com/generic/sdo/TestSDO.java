@@ -1,5 +1,5 @@
 /*
- * Animal.java
+ * TestSDO.java
  *
  * Copyright by CRIF AG
  * Zürich
@@ -13,7 +13,7 @@ package java21.com.generic.sdo;
  * @author nhqhien
  * @version $Revision:  $
  */
-public class Animal extends Original
+public class TestSDO
 {
 
 }

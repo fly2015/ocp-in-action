@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * 
@@ -102,9 +103,21 @@ public class QuestionsAndExercises
 		System.out.println(findMaxElem);
 		
 		// 9. no -> since T is erase at runtime. Static could not access instance context.
+		
+		// 12
+		List<Integer> integers = new ArrayList<Integer>();
+		integers.add(2);
+		integers.add(3);
+		integers.add(6);
+		Predicate<Integer> predicate = null;
+        findFirst(integers, 0, 3, predicate);
 	}
 	
-	
+
+    public static <T> int findFirst(List<T> list, int begin, int end, Predicate<T> p)
+    {
+        return end;
+    }
 	
 	public static <T extends Comparable<T>> T findMaxElem(List<T> list, int begin, int end)
 	{
@@ -153,9 +166,7 @@ public class QuestionsAndExercises
 	}
 	
 	
-	public static <T> int findFirst(List<T> list, int begin, int end, UnaryPredicate<T> p) {
-		return end;
-	}
+
 }
 
 

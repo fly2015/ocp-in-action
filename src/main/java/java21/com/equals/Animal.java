@@ -32,14 +32,17 @@ public class Animal {
 	public static void main(String[] args) {
 		Animal animal1 = new Animal("1", "Dog");
 		Animal animal2 = new Animal("2", "Cat");
+		Animal animal3 = new Animal("1", "Dog");
 		
 		System.out.println("animal1 == animal2: " + (animal1 == animal2));
 		System.out.println("animal1 == animal2: " + (animal1.equals(animal2)));
+		System.out.println("animal1 == animal3: " + (animal1.equals(animal3)));
 		
 		//When two objects are equal, you must override hashcode so that the hashcodes are equal too. 
 		// Otherwise you will have problems when you use the object in a collection.
 		System.out.println("animal1.hashCode(): " + (animal1.hashCode()));
 		System.out.println("animal1.hashCode(): " + (animal2.hashCode()));
+		System.out.println("animal1.hashCode(): " + (animal3.hashCode()));
 		
 		String str1 = new String("A");
 		String str2 = new String("A");
@@ -50,10 +53,13 @@ public class Animal {
 		
 		System.out.println("str1.equals(str2): " + str1.equals(str2));
 		System.out.println("str3.equals(str4): " + str3.equals(str4));
-		
+
 		System.out.println("str1.hashCode(): " + str1.hashCode());
 		System.out.println("str2.hashCode(): " + str2.hashCode());
 		
-
+		System.out.println("str3.hashCode(): " + str3.hashCode());
+        System.out.println("str4.hashCode(): " + str4.hashCode());
+        
+        System.out.println("str1.equals(str4): " + str1.equals(str4));
 	}
 }

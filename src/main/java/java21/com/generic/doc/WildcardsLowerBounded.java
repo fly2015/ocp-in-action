@@ -3,6 +3,11 @@ package java21.com.generic.doc;
 import java.util.ArrayList;
 import java.util.List;
 
+import java21.com.generic.sdo.Animal;
+import java21.com.generic.sdo.Cat;
+import java21.com.generic.sdo.Dog;
+import java21.com.generic.sdo.Original;
+
 public class WildcardsLowerBounded {
 	//a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.
 	
@@ -12,9 +17,20 @@ public class WildcardsLowerBounded {
 	    }
 	}
 	
+	
 	public static void main(String[] args) {
 		List<Integer> lIntegerSupper = new ArrayList<Integer>();
 		List<Object> lIntegerSupper1 = new ArrayList<Object>();
 		addNumbers(lIntegerSupper);
+		addNumbers(lIntegerSupper1);
+		
+		List<? super Original> list = new ArrayList<Object>();
+		List<? super Original> list1 = new ArrayList<Original>();
+        list.add(new Dog());
+        list.add(new Animal());
+        list.add(new Cat());
+        list.add(new Original());
+        
+        list.forEach((item) -> System.out.println(item.getClass().getSimpleName()));
 	}
 }

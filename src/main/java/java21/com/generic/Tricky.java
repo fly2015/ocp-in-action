@@ -10,6 +10,7 @@ package java21.com.generic;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class Tricky
         
         // tricky 5
         List<?> l = new ArrayList<String>();
-        Object x = l.get(0);
+       // Object x = l.get(0);
         
         // tricky 6
         List<?> lany = new ArrayList<>();
@@ -85,6 +86,20 @@ public class Tricky
         
         listB = listA;
         listB = listC;
+        
+        //tricky 9
+        HashSet<? super Object> set = new HashSet<Object>();
+        set.add(10);
+        set.add(10L);
+        set.add(new Object());
+        
+      
+        
+        List<? super ClassCastException> list1 = new ArrayList<Exception>();
+        list1.add(new ClassCastException());
+        
+        // tricky 10
+        //List<Object> l1 = new ArrayList<? extends Object>(); -> BDO NOT COMPILE
     }
     
     public static void addAllDemo(List< ? extends Number> listB)

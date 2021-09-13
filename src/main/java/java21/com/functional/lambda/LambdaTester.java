@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.lambda;
+package java21.com.functional.lambda;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,11 +33,7 @@ public class LambdaTester
         
         Comparator<String> comparator = (String s3, String s4) -> {return s3.compareTo(s4);};
         System.out.println(comparator.compare("12344", "abc"));
-        
-        
-	
-      
-        
+
     }
 }
 

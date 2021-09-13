@@ -29,7 +29,7 @@ public class WildcardsAndSubtyping
         // upper bound
         List<? extends Number> lNumberUpper = new ArrayList<Number>();
         List<? extends Integer> lIntegerUpper = new ArrayList<Integer>();
-
+        
         lAny = lNumberUpper;
         lAny = lNumberAlone;
         lAny = lIntegerUpper;
