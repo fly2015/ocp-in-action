@@ -2,3 +2,7 @@ javac -d {folder-out} --module-source-path {path} --module {module-name}
 java --module-path {folder-out} --module {module-name}/{packageName}.{Main}
 jar -cf {jar-file-name-with-path-optional} -C {path-of-class-files-include in the jar} .
 jar -cf {jar-file-name-with-path-optional} {path-of-class-files}
+
+
+javac -d ./modcompilation ./src/main/java/c11_modules/modA/*.java ./src/main/java/c11_modules/modA/packA1/*.java ./src/main/java/c11_modules/modA/packA2/*.java ./src/main/java/c11_modules/modA/packAMain/*.java
+java -p ./modcompilation -m c11_modules.modA/c11_modules.modA.packAMain.TestModAExportedPackage 

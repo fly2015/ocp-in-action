@@ -30,6 +30,10 @@ public class GenericsInheritanceAndSubtypes
         Box<Number> box = new GenericsInheritanceAndSubtypes(). new Box<Number>();
         box.add(new Integer(10));   // OK
         box.add(new Double(10.1));  // OK
+        
+        Object ob = box;
+        new GenericsInheritanceAndSubtypes().boxTest(new Object());
+        new GenericsInheritanceAndSubtypes().boxTest(box);
     }
     
     //What type of argument does it accept?

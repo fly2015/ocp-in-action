@@ -97,6 +97,14 @@ public class Tricky
         
         List<? super ClassCastException> list1 = new ArrayList<Exception>();
         list1.add(new ClassCastException());
+        //  list1.add(new Exception());
+        List<? super Number> list2 = new ArrayList<Object>();
+        List<? super Number> list3 = new ArrayList<Number>();
+        list2.add(10);
+        list2.add(10L);
+        List<? extends Number> list4 = new ArrayList<Number>();
+        Number number = list4.get(0);
+        // list2.add(new Object());
         
         // tricky 10
         //List<Object> l1 = new ArrayList<? extends Object>(); -> BDO NOT COMPILE

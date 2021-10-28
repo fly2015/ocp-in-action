@@ -28,7 +28,8 @@ public class Validator<T> {
 	}
 	
 	public <U> Validator<T> validate(Function<T, U> projection, Predicate<U> validation, String message) {
-		return validate(projection.andThen(validation::test)::apply, message);
+		Predicate<T> validation2 = projection.andThen(validation::test)::apply;
+        return validate(validation2, message);
 	}
 	
 	public T get() throws IllegalStateException {

@@ -20,10 +20,10 @@ import java.util.List;
 interface Collections<E>
 {
     public boolean containsAll(Collection<?> c);
-    public boolean addAll(Collection<? extends E> c);
+    public boolean addAll(Collection<? extends E> c); // Equivalent
     
     public <T> boolean containsAll1(Collection<T> c);
-    public <T extends E> boolean addAll1(Collection<T> c); 
+    public <T extends E> boolean addAll1(Collection<T> c); //Equivalent
     // Hey, type variables can have bounds too!
    
     public static <T> void copy(List<T> dest, List<? extends T> src){} // SHOULD USE

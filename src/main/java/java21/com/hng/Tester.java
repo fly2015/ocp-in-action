@@ -5,11 +5,12 @@
  */
 package java21.com.hng;
 
-import java.security.AlgorithmParameters;
-import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -34,7 +35,8 @@ public class Tester extends Parent
     }
     public Tester()
     {
-        
+        for(int i = 0; i <10; i++)
+            System.out.println(i);
     }
     
     public Tester(int i)
@@ -47,6 +49,8 @@ public class Tester extends Parent
     public static void setI(int i)
     {
         Tester.i = i;
+        Tester inst = new Tester();
+        int i2 = inst.i;
     }
     
     public void getI()
@@ -83,12 +87,30 @@ public class Tester extends Parent
         
         System.out.println(date);
         
+        StringBuilder name = new StringBuilder();
+        name.append("Hien");
+        speak(name);
+        System.out.println(name); // Webby
+        
+        getZ(1);
+        
+        
     }
-    
-  
-    public String setI(String i) {
+        
+    public static void speak(StringBuilder s) { //pass by values: copy the reference variable/primities values.
+        s = new StringBuilder("bcd");
+        //s.append("abcd"); change the object's data
+    }
+      
+    public  String setI(String i) {
         return i;
         
+    }
+    
+    public static void getZ(int u, String ...i) {
+        
+        Stream.of(i).collect(Collectors.toList());
+        System.out.println(Stream.of(i).collect(Collectors.toList()).contains("A"));
     }
 
     /**
