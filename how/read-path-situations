@@ -5,6 +5,8 @@ servletContext.getContextPath();
 #read path from java in debug/ unit test
 System.getProperty("user.dir");
 java.nio.file.FileSystems.getDefault().getPath("").toAbsolutePath();
+String path = "/data/test.txt";
+InputStream resourceStream = ReadDataDemo.class.getResourceAsStream(<path>);
 
 #read path from java running in a web server
 this.getClass().getClassLoader().getResource("/").getPath();
@@ -13,7 +15,7 @@ this.getClass().getClassLoader().getResource("/").getPath();
 ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 Resource res = resolver.getResource("/td-web/configurable-risk-report-template/" + templateName);
 
-ResourceBundle resourceBundle = ResourceBundle.getBundle(BASE_NAME, ServiceRequestContextHolder.getServiceRequestContext().getLocale());
+ResourceBundle resourceBundle = ResourceBundle.getBundle(<BASE_NAME>, ServiceRequestContextHolder.getServiceRequestContext().getLocale());
 
 ## crif
 ResourceLoaderFactory.getInstance().getResourceLoader().getResource(REQUEST_MAPPING_PATH);

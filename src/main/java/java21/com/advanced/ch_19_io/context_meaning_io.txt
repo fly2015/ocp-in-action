@@ -1,0 +1,49 @@
+1. files
+2. directories
+3. path: is a String representation of a file or directory within a file system
+4. The absolute path of a file or directory: is the full path from the root directory to the file or directory, including
+all sub-directories that contain the file or directory.
+5. The relative path of a file or directory is the path from the current working directory to the file or directory
+
+Files
+- Byte Streams vs. Character Streams
+InputStream and Reader
+OutputStream and Writer 
+Charset
+Input vs. Output Streams
+PrintWriter without PrintReader
+PrintStream has no corresponding InputStream  
+
+- Low‐Level vs. High‐Level Streams
+BufferedReader
+ObjectInputStream
+BufferedInputStream
+FileInputStream
+
+4 abstract classes
+InputStream, OutputStream, Reader, and Writer.
+
+flush() -> ensure data is written to disk from cache between each iteration.
+serialVersionUID -> helps inform the JVM that the
+stored data may not match the new class definition. If an
+older version of the class is encountered during
+deserialization, a java.io.InvalidClassException may be
+thrown
+
+EOFException -> when the end of the stream is reached when de-serialization
+
+available() -> the
+number of blocks that can be read without blocking
+another thread. In other words, it can return 0 even if
+there are more bytes to be read.
+
+Understanding the Deserialization Creation Process -> When you deserialize an object, the constructor of
+the serialized class, along with any instance initializers, is not
+called when the object is created. Java will call the no‐arg
+constructor of the first nonserializable parent class it can find
+in the class hierarchy.
+
+
+
+InputStreamReader -> wraps an InputStream with a Reader
+OutputStreamWriter -> wraps an OutputStream with a Writer.
