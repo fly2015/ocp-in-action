@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch_7_method_and_encapsulation;
+package java21.com.basic.ch7_methods_and_encapsulation;
 
 import java.io.IOException;
 

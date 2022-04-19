@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_13_anotation.json_convert;
+package java21.com.advanced.ch13_anotation.json_convert;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

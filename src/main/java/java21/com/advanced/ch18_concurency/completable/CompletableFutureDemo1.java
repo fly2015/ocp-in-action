@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_18_concurency.completable;
+package java21.com.advanced.ch18_concurency.completable;
 
 import java.io.ObjectInputStream;
 import java.util.ArrayList;

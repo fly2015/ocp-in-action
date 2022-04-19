@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_14_generic.book;
+package java21.com.advanced.ch14_generic.book;
 
 /**
  * 

@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_15_functional.stream.sdo;
+package java21.com.advanced.ch15_functional.stream.sdo;
 
 import java.util.Map;
 

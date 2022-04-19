@@ -1,12 +1,12 @@
-package java21.com.advanced.ch_14_generic.doc;
+package java21.com.advanced.ch14_generic.doc;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import java21.com.advanced.ch_14_generic.sdo.Animal;
-import java21.com.advanced.ch_14_generic.sdo.Cat;
-import java21.com.advanced.ch_14_generic.sdo.Dog;
-import java21.com.advanced.ch_14_generic.sdo.Original;
+import java21.com.advanced.ch14_generic.sdo.Animal;
+import java21.com.advanced.ch14_generic.sdo.Cat;
+import java21.com.advanced.ch14_generic.sdo.Dog;
+import java21.com.advanced.ch14_generic.sdo.Original;
 
 public class WildcardsLowerBounded {
 	//a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.

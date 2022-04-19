@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_19_io;
+package java21.com.advanced.ch19_io;
 
 import java.io.IOException;
 import java.io.InputStream;

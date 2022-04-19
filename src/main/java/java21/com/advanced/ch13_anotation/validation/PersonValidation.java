@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_13_anotation.validation;
+package java21.com.advanced.ch13_anotation.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

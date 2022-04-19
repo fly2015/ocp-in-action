@@ -1,0 +1,125 @@
+CONSTRUCTORS
+INSTANCE INITIALIZER
+
+four code blocks:
+a class definition, a method declaration, an inner block, and an instance initializer
+-> Bird.java
+
+balanced parentheses problem
+
+ORDER OF INITIALIZATION
+	Fields and instance initializer blocks are run in the order in which they appear in the file
+	The constructor runs after all fields and instance initializer blocks have run.
+
+Data Types
+	float and double floating-point (decimal) 
+	byte, short, int, and long without decimal points
+
+	Each numeric type uses twice as many bits as the smaller similar type
+	numeric types are signed in Java -> means that they reserve one of their bits to cover a negative range
+	
+	
+	char is unsigned
+	char can hold a higher positive numeric value than short
+	char cannot hold any negative numbers
+	
+	scientific notation
+	the numbers are stored as two numbers, a x 10^b
+	
+Writing Literals
+	floating-point literals are assumed to be double
+
+	decimal number system
+	Octal (digits 0–7), which uses the number 0 as a prefix—for example, 017
+	Hexadecimal (digits 0–9 and letters A–F/a–f), which uses 0x or 0X as a prefix—for example, 0xFF, 0xff, 0XFf.(case insensitive)
+	Binary (digits 0–1), which uses the number 0 followed by b or B as a prefix—for example, 0b10, 0B10
+
+Literals and the Underscore Character
+	add underscores anywhere except at the beginning of a literal, the end of a literal, right before a decimal point, or right after a decimal point
+
+REFERENCE TYPES
+	reference type refers to an object (an instance of a class)
+		
+IDENTIFYING IDENTIFIERS
+	must begin with a letter, a $ symbol, or a _ symbol
+	can include numbers but not start with them	
+	Since Java 9, a single underscore _ is not allowed
+	not same Java reserved word (native, strictfp, goto, const)
+	
+	const and goto aren’t actually used in Java
+	true/false/null are not actually reserved words, but literal values -> they cannot be used
+	
+	Java supports the Unicode character set, so there are thousands of characters that can start a legal Java identifier
+	
+Style: 
+	camelCase	
+	snake_case
+	
+DECLARING MULTIPLE VARIABLES
+	to declare multiple variables in the same statement, they must share the same type declaration and not repeat it.
+
+LOCAL VARIABLES
+	local variable is a variable defined within a constructor, method, or initializer block
+	Local variables do not have a default value and must be initialized before use
+
+PASSING CONSTRUCTOR AND METHOD PARAMETERS	
+	constructor parameters or method parameters are local variables that have been pre-initialized.
+	
+DEFINING INSTANCE AND CLASS VARIABLES	
+	instance variable -> is a value defined within a specific instance of an object
+	a class variable is one that is defined on the class level and shared among all instances of the class
+	
+	Default initialization values by type
+		boolean  -> false
+		byte, short, int, long  -> 0
+		float, double -> 0.0
+		char -> '\u0000' (NUL)
+		object references -> null
+
+VAR
+	var from java 10 -> local variable type inference
+	option of using the keyword var instead of the type for local variables under certain conditions.
+	only use this feature for local variables
+	can be used in for loops/try-catch/lamdas
+	
+Type Inference of var
+	var is still a specific type defined at compile time
+	for local variable type inference, the compiler looks only at the line with the declaration
+	var cannot be initialized with a null value without a type, it can be assigned a null value after it is declared.
+
+Review of var Rules
+	var is used as a local variable in a constructor, method, or initializer block
+	var cannot be used in constructor parameters, method parameters, instance variables, or class variables.
+	var is always initialized on the same line (or statement) where it is declared
+	The value of a var can change, but the type cannot
+	var cannot be initialized with a null value without a type
+	var is not permitted in a multiple-variable declaration
+	var is a reserved type name but not a reserved word, meaning it can be used as an identifier 
+	except as a class, interface, or enum name. 
+	-> Var.class
+	
+SCOPE
+	Local variables: In scope from declaration to end of block
+	Instance variables: In scope from declaration until object eligible for garbage collection
+	Class variables: In scope from declaration until program ends
+	
+Destroying Objects
+	All Java objects are stored in your program memory’s heap.	
+
+GARBAGE COLLECTION
+	Garbage collection refers to the process of automatically
+	freeing memory on the heap by deleting objects that are no
+	longer reachable in your program
+	
+	eligible for garbage collection refers to an object’s state of no longer being accessible
+	
+	Calling System.gc()  is not guaranteed to run or do anything
+	It merely suggests that the JVM kick off garbage collection
+	
+TRACING ELIGIBILITY
+	The object no longer has any references pointing
+	All references to the object have gone out of scope
+	
+FINALIZE()
+	In a nutshell, the garbage collector would call the finalize() method once.	
+	Just remember that finalize() can run zero or one times. It cannot run twice.	

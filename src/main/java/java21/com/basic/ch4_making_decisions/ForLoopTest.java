@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch_4_making_decisions;
+package java21.com.basic.ch4_making_decisions;
 
 import java.util.Iterator;
 

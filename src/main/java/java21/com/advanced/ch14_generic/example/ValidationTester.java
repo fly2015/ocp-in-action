@@ -1,4 +1,4 @@
-package java21.com.advanced.ch_14_generic.example;
+package java21.com.advanced.ch14_generic.example;
 
 import java.util.function.Function;
 import java.util.function.Predicate;

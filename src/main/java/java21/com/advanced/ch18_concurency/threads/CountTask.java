@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_18_concurency.threads;
+package java21.com.advanced.ch18_concurency.threads;
 
 import java.util.concurrent.TimeUnit;
 

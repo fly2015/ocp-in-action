@@ -1,0 +1,66 @@
+JDK
+JRE
+JVM
+javac
+java
+jar
+javadoc
+bytecode
+
+jlink
+In Java 11, the JRE is no longer available as a stand-alone
+
+the method signature (method name and parameter types)
+
+// a single-line comment
+/* a multiline comment */
+/** a javadoc comment */
+
+comments aren’t executable code
+
+two classes in the same file. -> only one class is allowed public
+Each file can contain only one public class.
+The filename must match the class name, including case, and have a .java extension
+
+access modifier
+If a main() method isn’t present in the class we name with the .java executable,
+the process will throw an error and terminate
+
+All command-line arguments are treated as String objects
+String[] args
+String args[]
+String... args;
+
+single-file source-code -> fully in memory
+
+package
+	import
+	it begins with java or javax, this means it came with the JDK
+	wildcard (*)
+	Wildcards do not look at subdirectories
+	
+	naming conflict
+	fully qualified class name
+	
+	package java.lang is special in that it does not need to be imported
+
+compile	
+	cannot use a wildcard to include subdirectories
+	-cp, -classpath, --class-path
+
+Ordering Elements in a Class
+	Package -> import -> class -> field -> method
+
+extra whitespace doesn’t matter in Java syntax
+
+Identify benefits of Java
+	object oriented
+	encapsulation
+	platform independence
+	robustness
+	simplicity
+	security
+	multithreading
+	backward compatibility
+
+JDK contains the compiler and JVM launcher

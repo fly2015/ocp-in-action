@@ -1,4 +1,4 @@
-package java21.com.advanced.ch_14_generic.example.tricky;
+package java21.com.advanced.ch14_generic.example.tricky;
 
 
 import java.util.ArrayList;

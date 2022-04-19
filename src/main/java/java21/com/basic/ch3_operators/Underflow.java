@@ -1,13 +1,11 @@
 /*
- * TestNumber.java
+ * Underflow.java
  *
  * Copyright by CRIF AG
  * Zürich
  * All rights reserved.
  */
-package hng;
-
-import java.math.BigInteger;
+package java21.com.basic.ch3_operators;
 
 /**
  * 
@@ -15,11 +13,11 @@ import java.math.BigInteger;
  * @author nhqhien
  * @version $Revision:  $
  */
-public class TestNumber
+public class Underflow
 {
     public static void main(String[] args)
     {
-       System.out.println(new BigInteger(String.valueOf(Double.NaN)));
+        System.out.println(-2147483648 -1); //2147483647
     }
 }
 

@@ -1,11 +1,11 @@
 /*
- * JavaCommandTest.java
+ * Bird.java
  *
  * Copyright by CRIF AG
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch_1_welcome;
+package java21.com.basic.ch2_building_block;
 
 /**
  * 
@@ -13,14 +13,20 @@ package java21.com.basic.ch_1_welcome;
  * @author nhqhien
  * @version $Revision:  $
  */
-public class JavaCommandTest
+public class Bird
 {
     public static void main(String[] args)
     {
-        System.out.println("Build and Run using java command.");
+        {
+            System.out.println("Feathers");
+        }
     }
-}
 
+    {
+        System.out.println("Snowy");
+    }
+
+}
 
 
 /*

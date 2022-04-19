@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch_10_exception;
+package java21.com.basic.chr10_exception;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package java21.com.advanced.ch_14_generic.doc;
+package java21.com.advanced.ch14_generic.doc;
 
 public class TypeInferenceAndGenericMethods {
 	public class Box<T> {

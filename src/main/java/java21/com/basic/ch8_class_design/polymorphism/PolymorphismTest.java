@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch_8_class_design.polymorphism;
+package java21.com.basic.ch8_class_design.polymorphism;
 
 /**
  * 

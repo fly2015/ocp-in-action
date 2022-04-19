@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_15_functional.lambda;
+package java21.com.advanced.ch15_functional.lambda;
 
 import java.io.IOException;
 import java.nio.file.Files;

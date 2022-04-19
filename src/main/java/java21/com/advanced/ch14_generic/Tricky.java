@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_14_generic;
+package java21.com.advanced.ch14_generic;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,8 +14,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import java21.com.advanced.ch_14_generic.sdo.Animal;
-import java21.com.advanced.ch_14_generic.sdo.Dog;
+import java21.com.advanced.ch14_generic.sdo.Animal;
+import java21.com.advanced.ch14_generic.sdo.Dog;
 
 /**
  * 

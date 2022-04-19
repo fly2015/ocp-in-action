@@ -1,4 +1,4 @@
-package java21.com.advanced.ch_14_generic.doc;
+package java21.com.advanced.ch14_generic.doc;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package java21.com.advanced.ch_15_functional.lambda;
+package java21.com.advanced.ch15_functional.lambda;
 
 import java.util.ArrayList;
 import java.util.List;

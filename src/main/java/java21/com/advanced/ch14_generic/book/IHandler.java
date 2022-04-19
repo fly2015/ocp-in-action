@@ -1,6 +1,6 @@
-package java21.com.advanced.ch_14_generic.book;
+package java21.com.advanced.ch14_generic.book;
 
-import java21.com.advanced.ch_14_generic.sdo.Animal;
+import java21.com.advanced.ch14_generic.sdo.Animal;
 
 interface IHandler {
 	<T> void ship1(T t);

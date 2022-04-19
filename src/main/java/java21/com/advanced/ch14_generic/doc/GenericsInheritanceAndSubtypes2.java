@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_14_generic.doc;
+package java21.com.advanced.ch14_generic.doc;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -258,7 +258,7 @@ public class GenericsInheritanceAndSubtypes2<P>
         }
 
         /**
-         * @see java21.com.advanced.ch_14_generic.doc.GenericsInheritanceAndSubtypes2.PayloadList#setPayload(int, java.lang.Object)
+         * @see java21.com.advanced.ch14_generic.doc.GenericsInheritanceAndSubtypes2.PayloadList#setPayload(int, java.lang.Object)
          */
         @Override
         public void setPayload(int index, P val)

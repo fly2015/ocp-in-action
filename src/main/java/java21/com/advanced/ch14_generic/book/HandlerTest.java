@@ -1,8 +1,8 @@
-package java21.com.advanced.ch_14_generic.book;
+package java21.com.advanced.ch14_generic.book;
 
-import java21.com.advanced.ch_14_generic.sdo.Animal;
-import java21.com.advanced.ch_14_generic.sdo.Cat;
-import java21.com.advanced.ch_14_generic.sdo.Dog;
+import java21.com.advanced.ch14_generic.sdo.Animal;
+import java21.com.advanced.ch14_generic.sdo.Cat;
+import java21.com.advanced.ch14_generic.sdo.Dog;
 
 public class HandlerTest {
 	public static void main(String[] args) {

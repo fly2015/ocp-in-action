@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_20_nio;
+package java21.com.advanced.ch20_nio;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

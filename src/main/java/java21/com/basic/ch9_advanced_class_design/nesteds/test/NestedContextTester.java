@@ -5,9 +5,9 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch_9_advanced_class_design.nesteds.test;
+package java21.com.basic.ch9_advanced_class_design.nesteds.test;
 
-import java21.com.basic.ch_9_advanced_class_design.nesteds.staticnested.Outer;
+import java21.com.basic.ch9_advanced_class_design.nesteds.staticnested.Outer;
 
 /**
  * 

@@ -5,7 +5,7 @@
  * Zürich
  * All rights reserved.
  */
-package java21.com.advanced.ch_14_generic.doc;
+package java21.com.advanced.ch14_generic.doc;
 
 import java.util.ArrayList;
 import java.util.Collection;
