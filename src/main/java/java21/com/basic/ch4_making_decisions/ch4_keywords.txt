@@ -1,0 +1,112 @@
+single statement
+block of statements
+
+it is often considered good coding practice to put blocks around the execution component of if statements
+in Java tabs are just whitespace and are not evaluated as part of the execution
+	0 and 1 are not considered boolean values
+	
+Switch
+	If no such case statement is found that matches the value, 
+	an optional DEFAULT statement will be called. If no such default option is available, the entire switch statement will be skipped.
+	
+	each case statement requires the keyword case, followed by a value and a colon (:).
+	short-circuit boolean operator, which cannot be applied to numeric values
+	single bitwise operator (|) would have allowed the code to compile, although the interpretation of this might not be what you expect
+	
+	Switch Data Types
+		a switch statement has a target variable that is not evaluated until runtime
+		Prior to Java 5.0 -> only int and type can promoted to int (byte, short, char)
+		switch statement also supports any of the wrapper class Byte, Short, Character, or Integer
+		From java 5 -> support enum
+		From java 7 -> support String
+		From java 10 -> support var
+		from Java 12 -> 
+		
+	Switch Control Flow
+		case/default no require order
+		default block, it is branched to only if there is no matching case, regardless of its position
+		If there is no break in case/default -> next cases/ next default will be executed until reach break
+		-> always consider that multiple branches may be visited in a single execution
+		
+	Acceptable Case Values
+		case statement must be COMPILE TIME CONSTANT values of the same data type as the switch value
+		-> can use only literals, enum constants, or final constant variables of the same data type
+		* expressions are allowed as case values (3*5)
+		
+		final: the variable must be marked with the final modifier
+		and initialized with a literal value in the same expression in
+		which it is declared.
+		
+		the data type for case statements must all match the data type of the switch variable
+		
+	Numeric Promotion and Casting
+		support numeric promotion that does not require an explicit cast
+		
+	
+	while -> code block is executed 0/more 
+	do-while -> code block is executed 1/more 
+		
+	INFINITE LOOPS
+		is a loop whose termination condition is never reached during runtime.
+		infinite loops can be used to monitor processes that exist for the life of the program
+		-> scheduled thread executor
+		
+	for
+		do the same thing in a single line of code
+		Basic for loop
+			 boolean expression
+			 statement/ block of statements
+			 
+			 initialization block
+			 update statement
+			 order: initialization -> check boolean condition -> true
+			 	-> execute body 
+			 	-> else exit 
+			 		-> execute update 
+			 		-> back to check condition.
+			 
+			 each section is separated by a semicolon
+			 the initialization and update sections may contain multiple statements enhanced for loop
+			 Variables declared in the initialization block of a for loop have limited scope and are accessible only within the for loop
+			 -> BeWaryForLoop.java
+			 
+			  variables declared before the for loop and assigned a value in the initialization block may be used outside the for loop
+			 
+			 Working with for
+			 	-> InfinityLoopFor.java
+			 	-> MultipleTermsFor.java
+			 	
+			 	do not allow re-declared variable in the initialization 
+			 	allow re-assign
+			    Do not allow  Incompatible Data Types
+			 
+			 Modifying Loop Variables
+			 	Java does let you modify loop variables, whether they be in for, while, or do/while loops
+			 	   
+		THE FOR-EACH LOOP -> from Java 5
+			right side
+				A built-in Java array(must be an array or collection of items, all those extend that Collection, Map is not supported in a for-each loop)
+				An object whose type implements java.lang.Iterable
+				
+			left side
+				a declaration for an instance of a variable whose type is compatible with the type of the array or collection on the right side
+				a var may also be used for the variable type declaration
+
+Controlling Flow with Branching
+	NESTED LOOPS
+		nested loop is a loop that contains another loop including while, do/while, for, and for-each
+		
+	OPTIONAL LABELS
+		label is an optional pointer to the head of a statement that allows the application flow to jump to it or break from it
+		a single identifier that is proceeded by a colon (:)		
+		
+		break/ break optional label
+		CONTINUE/ CONTINUE optional label
+		RETURN 
+		
+	UNREACHABLE CODE
+		any code placed immediately after them(break, continue, return) in the same block is considered unreachable and will not compile
+			
+	
+	switch -> DO NOT ALLOW <continue>
+			   
