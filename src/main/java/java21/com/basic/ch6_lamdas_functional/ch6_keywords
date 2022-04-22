@@ -1,0 +1,63 @@
+Lambdas and Functional Interfaces
+- Functional programming is a way of writing code more declaratively
+You specify what you want to do rather than dealing with the state of objects. 
+You focus more on expressions than loop
+
+- Functional programming uses lambda expressions to write code
+* A lambda expression is a block of code that gets passed around.
+You can think of a lambda expression as an unnamed method
+lambdas for short
+
+LAMBDA SYNTAX
+	- Lambdas work with interfaces that have only one abstract method. 	
+	- Java relies on context when figuring out what lambda expressions mean
+	- Since we are passing a lambda , Java tries to map our lambda to the interface
+	
+	- can omit braces when we have only a single statement.
+	- parentheses are optional only when there is one parameter and it doesn’t have a type declared
+	- doesn’t require you to type return or use a semicolon when no braces are used
+	- s -> {} is a valid lambda
+	
+Introducing Functional Interfaces
+	- Lambdas work with interfaces that have only one abstract method. These are called functional interfaces
+	Single Abstract Method (SAM)
+	@FunctionalInterface -> u don’t see the annotation doesn’t mean it’s not a functional interface.
+
+PREDICATE -> 1 input return boolean
+CONSUMER  -> 1 input void return
+SUPPLIER  -> 0 input  1 return
+COMPARATOR -> 2 input 1 return int
+	The Comparator interface existed prior to lambdas being added to Java.
+	Comparator in java.util.
+	ints comparator uses natural sort order
+	if the first number is bigger, it will return a positive number
+	-> ComparatorDemo.java
+	
+Working with Variables in Lambdas
+	parameter list, 
+	local variables declared inside the lambda body	
+	variables referenced from the lambda body
+	
+PARAMETER LIST
+	- specifying the type of parameters is optional
+	- var can be used in place of the specific type
+	- lambda infers the types from the surrounding context
+	* look for the type is in a method signature/ type of functional interfaces
+
+LOCAL VARIABLES INSIDE THE LAMBDA BODY
+	Java doesn’t let you create a local variable with the same name as one already declared in that scope
+	-> LamdasDeclareVariableTrick.java
+	
+VARIABLES REFERENCED FROM THE LAMBDA BODY
+	Access Rules:
+	parameters and local variables are allowed to be referenced if they are effectively final.
+	Instance variables (and class variables) are always allowed.
+
+Calling APIs with Lambdas
+	REMOVEIF()
+	SORT()
+	FOREACH()
+	
+USING FOREACH() WITH A MAP DIRECTLY	
+	Use BiConsumer
+	

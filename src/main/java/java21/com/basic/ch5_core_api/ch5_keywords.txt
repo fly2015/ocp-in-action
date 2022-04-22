@@ -1,0 +1,243 @@
+Creating and Manipulating Strings
+	The String Pool
+	Literal
+	initialize object by new
+	
+	Since a String is a sequence of characters
+	Implement CharSequence
+	
+	
+CONCATENATION
+		Placing one String before the other String and combining them.
+		- both operands are numeric, + means numeric addition
+		- either operand is a String, + means concatenation.
+		- is evaluated left to right
+		* Use numeric addition if two numbers are involved
+
+IMMUTABILITY
+	an object that can’t be changed its state once it’s created
+	There’s no way to change the value of the state once it’s set
+	
+	* make the instance variable FINAL so the compiler reminds you if you accidentally change.
+	* immutable classes in Java are final, which prevents subclasses creation
+	-> You wouldn’t want a subclass adding mutable behavior.
+	
+	- concat() will return a new String
+	
+IMPORTANT STRING METHODS
+	a sequence of characters and Java counts from 0 when indexed.
+	- length()
+	- charAt() throws exception(StringIndexOutOfBoundsException)
+	- int indexOf(int ch)
+	
+	- indexOf(int ch, int fromIndex)
+	- indexOf(String str)
+	- indexOf(String str, int fromIndex)
+	  * returns –1 when no match 	
+	  
+	 substring() 
+	 substring(int beginIndex, int endIndex) -> exclude endIndex
+	 	is the trickiest String method 
+	 	* throws exception
+	 toLowerCase()
+	 toUpperCase()
+	 
+	 equals(Object obj)
+	 equalsIgnoreCase(String str) -> convert the characters’ case if needed
+	 	- check two String objects contain exactly the same characters in the same order.
+	 
+	 boolean startsWith(String prefix)
+	 boolean endsWith(String suffix)
+	 	* Java is doing a case-sensitive check on the values provided
+	 	
+	 String replace(char oldChar, char newChar)
+	 String replace(CharSequence target, CharSequence replacement)
+	 	* does a simple search and replace on the string
+	 	
+	 boolean contains(CharSequence charSeq)
+	 	The contains() method is a convenience method so you don’t have to write str.indexOf(otherString) != -1.
+	 	
+	trim()	
+	 	removing blank space from the beginning and/or end of a String
+	 	In terms of the exam, whitespace consists of spaces along with the \t (tab) and \n (newline) and \r (carriage return)
+	 
+	from Java 11
+		 strip(), same trim() but support Unicode
+		 String stripLeading() remove whitespaces from beginning
+		 String stripTrailing()	 remove whitespaces from ending
+		 
+	intern()
+		 returns the value from the string pool if it is there.Otherwise, it adds the value to the string pool
+		 
+		 
+Using the StringBuilder Class
+	StringBuilder is not imutable
+	reuses the same StringBuilder without creating an interim String each time
+	
+	MUTABILITY AND CHAINING
+	-> the StringBuilder changes its own state and returns a reference to itself
+	
+	CREATING A STRINGBUILDER
+		with capacity or default or with String
+	
+	IMPORTANT STRINGBUILDER METHODS
+		charAt(), indexOf(), length(), and substring() same String
+		substring()	returns a String
+		append() add a String and returns a reference to the current StringBuilder
+			-> There are more than 10 method signatures that look similar but that take different data types as parameters
+		
+		insert()
+			adds characters to the StringBuilder at the requested index(precede current index) and returns a reference to the current StringBuilder
+			delete()
+			deleteCharAt()
+		
+		replace()
+		reverse()
+		toString()
+		
+	StringBuilder did not implement equals(). If you call equals() on two StringBuilder instances, it will check reference equality.
+
+* If a class doesn’t have an equals method, Java determines whether the references point to the same object
+
+THE STRING POOL(intern pool)
+	location in the Java virtual machine (JVM) that collects all these strings		 
+	-> contains literal values and constants that appear in your program	
+	Concatenation is just like calling a method and results in a new String
+	
+	The intern() method will use an object in the string pool
+		if one is present. If the literal is not yet in the string pool, Java
+		will add it at this time.
+		
+	* compile-time constant that automatically gets placed in the string pool
+	
+Understanding Java Arrays
+	reference type, ordered list, allow contain duplicate
+	
+	create: type, size, arr symbol
+	int[] nums = new int[3] ->all elements are set to the default value for that type.
+	anonymous array -> you don’t specify the type and size.
+	
+	can type the [] before or after the name
+	MULTIPLE “ARRAYS” IN DECLARATIONS -> bracket must be right after type.
+	-> DeclareArrayStyle.java
+	
+	toString(): [Ljava.lang .String;@160bc7c0 -> L mean arrays, String is the ref type, 160bc7c0 is the hashcode
+	
+	From  Java 5 -> Arrays.toString(bugs) nicely
+	
+	ArrayStoreException.java
+	
+	USING AN ARRAY
+		.length without curly bracket()
+		 length does not consider what is in the array;
+		 it only considers how many slots have been allocated.
+		 
+	SORTING
+	String sorts in alphabetic order, and 1 sorts before 9.
+	Numbers sort before letters, and uppercase sorts before lowercase.
+	
+	SEARCHING
+		Arrays.binarySearch()
+		Binary search rules
+			Found -> return index.
+			Not Found -> negate and subtract 1
+						 where a match needs to be inserted to preserve sorted order
+			Unsorted -> result un-predictable
+			
+	COMPARING
+		negate number -> first is smaller than second
+		zero -> equal
+		positive -> first is grater than the second
+		
+		same length, same value in each spot in the same order -> 0
+		all the elements same, the second has extra elem -> negative else positive
+		first elem of first array are smaller -> negative else positive
+		
+		Samller means:
+			null is smaller than any other value.
+			for string numbers are smaller than letters
+			uppercase is smaller than lowercase.
+			
+		mismatch()
+			If the arrays are equal, mismatch() returns -1.
+			Otherwise, it returns the first index where they differ
+			
+	VARARGS
+		public static void main(String... args) // varargs
+		
+	
+	MULTIDIMENSIONAL ARRAYS
+		MultidimensionalArray.java
+		asymmetric multidimensional array
+		
+	Understanding an ArrayList
+		can change capacity at runtime
+		an ordered sequence
+		allows duplicates
+		implement interface List
+		
+		required  diamond operator / no diamond will warning
+		var list = new ArrayList<>(); -> type of var is objects
+		
+		
+USING AN ARRAYLIST
+	ArrayListWithoutGeneric.java
+	
+	boolean add(E element)
+	void add(int index, E element)
+	boolean remove(Object object)
+	E remove(int index)  index that doesn’t exist will throw an exception.
+	E set(int index, E newElement) IndexOutOfBoundsException
+	isEmpty() and size()
+	clear()
+	contains()
+	equals() -> same element in same ordered
+	
+WRAPPER CLASSES
+	 has a constructor(isn’t recommended for new code)/use valueOf() instead of, it allows object caching.
+	 wrapper classes are immutable and take advantage of some CACHING as well
+	 XValue() -> revert (un-boxing)./parseValue -> NumberFormatException
+	 Charactor has no method for boxing and unboxing.
+	 
+	 - it can be used to store a null value
+	 
+AUTOBOXING AND UNBOXING
+	from java 5 -> autoboxing:just type the primitive value, and Java will convert it to the relevant wrapper class
+					reverse conversion of wrapper class to primitive value is called unboxing	 
+
+CONVERTING BETWEEN ARRAY AND LIST
+	- a fixed-size list and is also known as a backed List because the array changes with it
+		-> FixedList.java
+	
+	- an immutable copy of the original array	 
+		-> ImutableList.java
+		
+	- If you will need to later add or remove elements, you’ll still need to create an ArrayList using the constructor
+	ArrayAndListConversions.java -> none of the options allows you to change the number of elements.
+	
+SORTING
+	Collections.sort(numbers);
+	
+
+SET
+	a Set isn’t ordered
+	cannot call set(index,value) or remove(index)
+	* could not identify the index cos the way the set store values, 
+	    not store index/element pair -> it store using buket/slot by using hashing algorithm
+		bucket index = (hask(key) & capacity)
+		load-factor 
+	
+	 add(value) -> if trying to add a duplicate value, the method returns false and does not add the value
+	 
+	 HashSet is the most common
+	 TreeSet isused when sorting is important.
+	 
+Map	 
+	 - method () -> Returns previous value or null if none
+	 
+	 
+Calculating with Math APIs
+	MIN() AND MAX()
+	ROUND() -> if the first number of fractional part is .5 or higher, we round up.
+	POW() 	->  exponents  
+	double RANDOM()  returns a value greater than or equal to 0 and less than 1
