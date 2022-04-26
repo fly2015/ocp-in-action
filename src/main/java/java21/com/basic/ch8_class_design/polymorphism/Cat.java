@@ -13,14 +13,23 @@ package java21.com.basic.ch8_class_design.polymorphism;
  * @author nhqhien
  * @version $Revision:  $
  */
-public class Cat extends Animal
+public class Cat extends Animal implements CanRun
 {
-    /*
-     * void eat()
-     * {
-     * System.out.println("Cat eat");
-     * }
+    
+    @Override
+    void getName()
+    {
+        System.out.println("The Cat.");
+    }
+
+    /**
+     * @see java21.com.basic.ch8_class_design.polymorphism.CanRun#run()
      */
+    @Override
+    public void run()
+    {
+        System.out.println("Cat is running.");
+    }
 }
 
 

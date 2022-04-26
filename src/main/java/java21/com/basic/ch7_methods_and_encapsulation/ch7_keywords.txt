@@ -1,0 +1,18 @@
+Method signature: method name and input parameters
+
+The order that Java uses to choose the right overloaded method
+	1. Exact match by type
+	2. Larger primitive type
+	3. Autoboxed type 
+	4. Varargs
+
+can convert a primitive to larger primitive	or autobox it.
+can not convert a smaller primitive to an autobox version of the larger type. 
+if a variable is not a primitive, it is an Object
+
+Encapsulation means only methods in the class with the variables can refer to the instance variables.
+(A state's of object should be changed by operation inside that object)
+- accessor method or a getter
+- a mutator method or a setter
+
+- remember that data (an instance variable) is private and getters/setters are public.

@@ -15,15 +15,16 @@ package java21.com.basic.ch8_class_design.polymorphism;
  */
 public class Dog extends Animal implements CanRun
 {
-    void eat()
+    void getName()
     {
-        System.out.println("Dog eat");
+        System.out.println("The Dog.");
     }
+
     
     @Override
     public void run()
     {
-        System.out.println("Dog can run.");
+        System.out.println("Dog is running.");
     }
     
 }
