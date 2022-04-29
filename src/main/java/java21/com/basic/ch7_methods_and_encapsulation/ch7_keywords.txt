@@ -1,18 +1,109 @@
 Method signature: method name and input parameters
+ACCESS MODIFIERS
+	private: the method can be called only from within the same class
+	Default (Package-Private) Access
+	protected
+	public
 
-The order that Java uses to choose the right overloaded method
+OPTIONAL SPECIFIERS
+	static
+	abstract
+	final
+	synchronized
+	native
+	strictfp
+	
+	- Java allows the optional specifiers to appear before the access modifier
+	
+RETURN TYPE	
+	- void are permitted to have a return statement with no value returned or omit the return statement entirely
+	
+METHOD NAME
+	- may only contain letters, numbers, $, or _
+	- the first character is not allowed to be a number, and reserved words are not allowed.
+	
+OPTIONAL EXCEPTION LIST
+	- You can list as many types of exceptions as you want in this clause separated by commas
+	
+	
+	
+Working with Varargs
+
+	- A varargs parameter must be the last element in a method’s parameter list.
+		-> 	you are allowed to have only one varargs parameter per method
+	- pass in an array or list the elements of the array and let Java create it
+	- can even omit the varargs values in the method call and Java will create an array of length zero
+	- it is still possible to pass null explicitly
+	- Accessing a varargs parameter is just like accessing an array. 
+
+PRIVATE ACCESS/DEFAULT/PROTECTED/PUBLIC
+	- Only code in the same class can call private methods or access private fields
+	
+
+Applying the static Keyword
+	variable, method, class, import
+	-  static methods don’t require an instance of the class
+		-> utility or helper methods that don’t require any object state
+		-> for state that is shared by all instances of a class
+		
+ACCESSING A STATIC VARIABLE OR METHOD	
+	- You just put the class name before the method or variable and you are done	.
+	***
+	You can use an instance of the object to call a static method. 
+	The compiler checks for the type of the reference and uses that instead of the object.
+	The order that Java uses to choose the right overloaded method.
+	-> StaticAccessViaObjectInstance.java (Dont be fooled)
+
+STATIC VS. INSTANCE
+	A static member cannot call an instance member without referencing an instance of the class
+	
+DOES EACH INSTANCE HAVE ITS OWN COPY OF THE CODE?
+	- Each object has a copy of the instance variables
+	- There is only one copy of the code for the instance methods
+	- each call of an instance method (or any method) gets space on the stack for method parameters and local variables
+	The same thing happens for static methods
+	
+	*** only data gets its “own copy.” There is no need to duplicate copies of the code itself.
+	
+STATIC INITIALIZATION	
+	All static initializers run when the class is first used in the order they are defined..
+	final variables aren’t allowed to be reassigned
+
+TRY TO AVOID STATIC AND INSTANCE INITIALIZERS
+	Use when when you need to initialize a static field and the code to do so requires more than one line
+	
+STATIC IMPORTS
+
+Passing Data among Methods
+	- Java is a “pass-by-value” language
+	- Assigning a new primitive or reference to a parameter doesn’t change the caller.
+	- Calling methods on a reference to an object can affect the caller.
+
+Overloading Methods
+	- Method overloading occurs when methods have the same name but different method signatures, which means they differ by method parameters
+	
+	Everything other than the method name can vary for
+	overloading methods. This means there can be different access
+	modifiers, specifiers (like static), return types, and exception
+	lists.
+	You cannot have methods
+	where the only difference is that one is an instance method and
+	one is a static method.
+	
+	- The order that Java uses to choose the right overloaded method
 	1. Exact match by type
 	2. Larger primitive type
 	3. Autoboxed type 
 	4. Varargs
 
-can convert a primitive to larger primitive	or autobox it.
-can not convert a smaller primitive to an autobox version of the larger type. 
-if a variable is not a primitive, it is an Object
+	can convert a primitive to larger primitive	or autobox it.
+	can not convert a smaller primitive to an autobox version of the larger type. 
+	if a variable is not a primitive, it is an Object
 
-Encapsulation means only methods in the class with the variables can refer to the instance variables.
-(A state's of object should be changed by operation inside that object)
-- accessor method or a getter
-- a mutator method or a setter
-
-- remember that data (an instance variable) is private and getters/setters are public.
+Encapsulating Data
+	Encapsulation means only methods in the class with the variables can refer to the instance variables.
+	(A state's of object should be changed by operation inside that object)
+	- accessor method or a getter
+	- a mutator method or a setter
+	
+	- remember that data (an instance variable) is private and getters/setters are public.

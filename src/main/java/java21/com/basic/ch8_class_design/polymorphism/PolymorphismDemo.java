@@ -34,6 +34,54 @@ public class PolymorphismDemo
     }
 }
 
+class Animal
+{
+    void getName()
+    {
+        System.out.println("An Animal.");
+    }
+}
+
+interface CanRun
+{
+    void run();
+}
+
+class Cat extends Animal implements CanRun
+{
+    
+    @Override
+    void getName()
+    {
+        System.out.println("The Cat.");
+    }
+
+    /**
+     * @see java21.com.basic.ch8_class_design.polymorphism.CanRun#run()
+     */
+    @Override
+    public void run()
+    {
+        System.out.println("Cat is running.");
+    }
+}
+
+class Dog extends Animal implements CanRun
+{
+    void getName()
+    {
+        System.out.println("The Dog.");
+    }
+
+    
+    @Override
+    public void run()
+    {
+        System.out.println("Dog is running.");
+    }
+    
+}
+
 
 
 /*

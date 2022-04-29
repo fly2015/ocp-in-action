@@ -2,3 +2,396 @@ overloading/overriding/hiding
 object type versus reference type
 
 Through polymorphism: gain access to a dynamic hierarchy that supports replacing method implementations in subclasses at runtime
+
+the culmination of some of the most important topics in Java including
+- class design
+- constructor overloading
+- inheritance
+- order of initialization
+- overriding/hiding methods
+- polymorphism
+
+Understanding Inheritance
+	- Inheritance is the process by
+	which a subclass automatically includes any public or
+	protected members of the class, including primitives, objects,
+	or methods, defined in the parent class
+	
+	- superclass or parent class
+	- inheritance is transitive(bắt cầu)
+	- direct descendant
+	
+	- all public and protected members are automatically available as part of the child class
+	- Package-private members are available if the child class is in
+	the same package as the parent class
+	- private members are restricted to the class they are defined in
+	and are never available via inheritance.
+		-> it just means the child class has no direct reference to them
+	
+SINGLE VS. MULTIPLE INHERITANCE
+	- Java supports single inheritance	
+	- Java doesn’t support multiple inheritance
+	-> if you have an object or method defined in all of the parents, which one does the child
+	inherit? 
+	
+	- to prevent a class from being extended by marking the class with the final modifier.
+
+INHERITING OBJECT
+	- all classes inherit from a single class: java.lang.Object
+	- Object is the only class that doesn’t have a parent class.
+	** the compiler automatically adds the syntax extends java.lang.Object to the class definition
+	if there is no extend any
+	
+	- Primitive types such as int and boolean do not inherit from Object
+	
+APPLYING CLASS ACCESS MODIFIERS
+	- a top-level class is a class that is not defined inside another class.
+	-> They can only have public or package-private access
+		
+	- an inner class is a class defined inside of another class	
+	-> an also have protected and private access
+	
+	**
+	One benefit of using the
+	package-private access is that you can define many classes
+	within the same Java file
+	
+	
+ACCESSING THE THIS REFERENCE
+	- when you have a local variable with the same name as an instance variable is to use the this reference or keyword
+	- The THIS reference refers to the current instance of the class
+	- can be used to access any member of the class, including inherited members
+	- It can be used in any instance method, constructor, and instance initializer block
+	- It cannot be used when there is no implicit instance of the class, such as in a static method or static initializer block
+	
+	- the this reference is optional
+	If Java encounters a
+	variable or method it cannot find, it will check the class
+	hierarchy to see if it is available.
+	-> UsingThisDemo.java
+		
+CALLING THE SUPER REFERENCE	
+	- a variable or method can be defined in both a parent class and a child class
+	how do we reference the version in the parent class instead of the current class?
+	super ->    is similar to the this reference, except that
+				it excludes any members found in the current class.
+	
+	-> UsingSupperDemo.java
+	
+	- without supper -> Java uses the narrowest scope it can
+	- you often only use super when you have a naming conflict via inheritance			
+
+Declaring Constructors
+	- a constructor is a special method that matches the name of the class and has no return type
+	*  we’ll look at default constructors, overloading constructors, calling
+		parent constructors, final fields, and the order of initialization in a class
+		
+CREATING A CONSTRUCTOR
+	- Java is case sensitive
+	- constructor parameters can be any
+	valid class, array, or primitive type, including generics, but may not include var
+	
+	- A class can have multiple constructors, so long as each constructor has a unique signature
+	-> that means the constructor parameters must be distinct
+	
+	- declaring multiple
+		constructors with different signatures is referred to as
+		constructor overloading
+	
+	- Constructors are used when creating a new object. This process
+	is called instantiation because it creates a new instance of the
+	class
+	
+	-  new keyword, it allocates memory for the new object	
+
+DEFAULT CONSTRUCTOR
+	- Every class in Java has a constructor whether you code one or not
+	- default constructor and is added anytime a class is declared without any constructors
+		-> default no-argument constructor for clarity
+		
+	- The default constructor has an empty parameter list and an empty body
+	- a default constructor is only supplied if there are no constructors present
+	
+	** Having only private constructors in a class tells the
+	compiler not to provide a default no-argument constructor
+	
+	- It also prevents other classes from instantiating the class
+	
+	
+	** Remember, static methods in the class, including a
+		main() method, may access private members, including
+		private constructors
+		
+CALLING OVERLOADED CONSTRUCTORS WITH THIS()	
+	OverLoadedConstructorWrongWay.java
+	Using THIS -> OverLoadedConstructorCorrectWay.java
+	
+	- could not recursive calling constructor
+	
+	- the this() call must be the first statement in the constructor.
+	-> there can be only one call to this() in any constructor.
+
+THIS VS. THIS()
+	-> this, refers to an instance of the class
+	-> this(), refers to a constructor call within the class
+
+CALLING PARENT CONSTRUCTORS WITH SUPER()
+	- Like calling this(), calling super() can only be used as the first statement of the constructor.
+	- If the parent class has more than one constructor, the child class may use any valid parent constructor in its definition
+
+SUPER VS. SUPER()
+	- super, is used to reference members of the parent class
+	- super(), calls a parent constructor
+	
+Understanding Compiler Enhancements
+	Java compiler automatically inserts a call to the no-argument
+	constructor super() if you do not explicitly call this() or
+	super() as the first line of a constructor
+	
+ARE CLASSES WITH ONLY PRIVATE CONSTRUCTORS CONSIDERED FINAL? (NO)
+	-> but only an inner class defined in the class itself can extend it
+	An inner class is the only
+	one that would have access to a private constructor and
+	be able to call super()
+	
+Missing a Default No-Argument Constructor
+SUPER() ALWAYS REFERS TO THE MOST DIRECT PARENT
+
+CONSTRUCTORS AND FINAL FIELDS
+	- By the time the constructor completes, all final instance
+	variables must be assigned a value
+	
+	-  local final variables, which are not required to have a
+	value unless they are actually used
+	- final instance variables must be assigned a value
+	- Default values are not used for these variables
+	
+	- each constructor is considered independently in terms of assignment
+	
+	final instance variables when a constructor calls another constructor in the same class?
+	??? -> can pass null;
+	
+	
+ORDER OF INITIALIZATION
+	Class Initialization
+		- involves invoking all static members in the class hierarchy
+		starting with the highest superclass and working downward
+		-> This is often referred to as loading the class
+		
+		The JVM controls when the class is initialized
+		- a class must be initialized before it is referenced or used. 
+		/  may be initialized when the program first starts
+		
+		The most important rule with class initialization is that it happens at most once(nhiều nhất là 1 lần) for each class.
+		The class may also never be loaded if it is not used in the program
+		
+	Initialize Class X
+		1. If there is a superclass Y of X, then initialize class Y first
+		2. Process all static variable declarations in the order they appear in the class.
+		3. Process all static initializers in the order they appear in the class.
+		
+	
+	Instance Initialization
+		- An instance is initialized any time the new keyword is used.
+	
+	Initialize Instance of X
+		initialize each class starting with the
+		superclass, processing each instance initializer and constructor
+		in the reverse order in which it was called.
+		
+		1. If there is a superclass Y of X, then initialize the instance of Y first.
+		2. Process all instance variable declarations in the order they appear in the class.
+		3. Process all instance initializers in the order they appear in the class.
+	 	4. Initialize the constructor including any overloaded constructors referenced with this().
+	 	
+	 	
+	 	***
+	 	Remember, constructors
+		are executed from the bottom up, but since the first line of
+		every constructor is a call to another constructor, the flow
+		actually ends up with the parent constructor executed before
+		the child constructor
+		
+		1. The first statement of every constructor is a call to an
+		overloaded constructor via this(), or a direct parent
+		constructor via super().
+		2. If the first statement of a constructor is not a call to this() or
+		super(), then the compiler will insert a no-argument super() as
+		the first statement of the constructor.
+		3. Calling this() and super() after the first statement of a
+		constructor results in a compiler error.
+		4. If the parent class doesn’t have a no-argument constructor,
+		then every constructor in the child class must start with an
+		explicit this() or super() constructor call.
+		5. If the parent class doesn’t have a no-argument constructor and
+		the child doesn’t define any constructors, then the child class
+		will not compile.
+		6. If a class only defines private constructors, then it cannot be
+		extended by a top-level class.
+		7. All final instance variables must be assigned a value exactly
+		once by the end of the constructor. Any final instance
+		variables not assigned a value will be reported as a compiler
+		error on the line the constructor is declared.
+		
+Inheriting Members
+		Java allows  subclasses to replace, or override, the parent method
+		implementation at runtime.
+
+CALLING INHERITED MEMBERS	
+	a child class may never access a private member of the parent class, at
+	least not through any direct reference
+	
+	Overriding a Method
+		- In Java, overriding a method occurs
+		when a subclass declares a new implementation for an
+		inherited method with the same signature and compatible
+		return type.
+		
+		- you override a method, you may reference the parent version of the method using the super keyword
+		
+		
+	1. The method in the child class must have the same signature as the method in the parent class.
+	2. The method in the child class must be at least as accessible as the method in the parent class.
+	3. The method in the child class may not declare a checked exception that is new or broader than the class of any exception declared in the parent class method.
+	4. If the method returns a value, it must be the same or a subtype of the method in the parent class, known as covariant return types.		
+
+DEFINING SUBTYPE AND SUPERTYPE		
+	- Remember, a subclass is a subtype, but not all subtypes are subclasses.
+	- Overloaded methods are considered independent and do not
+	share the same polymorphic properties as overridden methods.
+	
+OVERLOADING VS. OVERRIDING
+	- similar in that they both involve redefining a method using the same name
+	They differ in that
+	- an overloaded method will use a different list of method parameters/returned type
+	* overloaded more freedom in syntax than an overridden	 
+	
+	- covariance
+		Given an inherited return type A and an overriding return type B
+		-> assign an instance of B to a reference variable for A without a cast
+		
+Overriding a Generic Method
+	Review of Overloading a Generic Method
+		- cannot overload methods by changing the generic type due to type erasure
+		OverLoadGenericMethodOfParent.java
+	
+	Generic Method Parameters
+		- you can override a method with generic
+		parameters, but you must match the signature including the
+		generic type exactly.
+	
+	-> OverLoadGenericMethodOfParent2
+	
+
+	GENERICS AND WILDCARDS
+		-> Next chaps
+		
+	Generic Return Types
+		the return values must be covariant.
+		
+	** it might be helpful for you to apply type erasure ->  to ensure that they compile properly
+	-> Determine overridden or overloaded
+	-> making sure the generic types match for overridden methods
+	
+	
+Redeclaring private Methods
+	- you can’t override private methods since they are not inherited
+	- child class can define its own version of the private method -> not an overriden
+	* Java permits you to redeclare a new method in the child class
+	with the same or modified signature as the method in the
+	parent class. This method in the child class is a separate and
+	independent method, unrelated to the parent version’s method
+	
+Hiding Static Methods
+	A hidden method occurs when a child class defines a static
+	method with the same name and signature as an inherited
+	static method defined in a parent class.
+	
+	5. The method defined in the child class must be marked as static if it is marked as static in a parent class.
+	Put simply, it is method hiding if the two methods are marked static, and method overriding if they are not marked static
+	-> if one of version static -> compile errors
+	
+Creating final Methods
+	final methods cannot be replaced
+	cannot hide a static method/override a method
+
+WHY MARK A METHOD AS FINAL?
+	the final modifier is often used when the author of the parent
+	class wants to guarantee certain behavior at the cost of
+	limiting polymorphism.	
+	
+HIDING VARIABLES
+	In fact, Java doesn’t allow variables to be overridden. 
+	Variables can be hidden
+	
+	A hidden variable occurs when a child class defines a variable
+	with the same name as an inherited variable defined in the
+	parent class
+	This creates two distinct copies of the variable
+	within an instance of the child class: one instance defined in
+	the parent class and one defined in the child class
+	
+	- The output changes depending on the reference variable used.
+	*** overriding a method replaces the parent method on all
+	reference variables (other than super), whereas hiding a
+	method or variable replaces the member only if a child
+	reference type is used.
+	
+Understanding Polymorphism
+	Q.10 Q&A
+	
+OBJECT VS. REFERENCE
+	1. The type of the object determines which properties exist within the object in memory.
+	2. The type of the reference to the object determines which methods and variables are accessible to the Java program.
+	
+CASTING OBJECTS
+	- Implicit Cast
+	- Explicit Cast 
+	(Downcasting -> cast parent to child)
+	
+	1. Casting a reference from a subtype to a supertype doesn’t
+	require an explicit cast.
+	2. Casting a reference from a supertype to a subtype requires an
+	explicit cast.
+	3. The compiler disallows casts to an unrelated class.
+	4. At runtime, an invalid cast of a reference to an unrelated type
+	results in a ClassCastException being thrown
+	
+	***
+	While the compiler can enforce rules about casting to
+	unrelated types for classes, it cannot do the same for
+	interfaces
+	
+	***
+	involves casting
+	and polymorphism, be sure to remember what the instance of
+	the object actually is. Then, focus on whether the compiler will
+	allow the object to be referenced with or without explicit casts.
+	
+THE INSTANCEOF OPERATOR
+	- the instanceof operator, which can
+	be used to check whether an object belongs to a particular class
+	or interface and to prevent ClassCastExceptions at runtime	
+	
+	- Just as the compiler does not allow casting an object to
+	unrelated types, it also does not allow instanceof to be used
+	with unrelated types.
+	
+POLYMORPHISM AND METHOD OVERRIDING
+	The facet of polymorphism that replaces methods via
+	overriding is one of the most important properties in all of Java.(THIS keyword does not help as well)
+	-> PorlymorphismClassic
+	
+	PorlymorphismClassic.class
+	- limit polymorphic behavior by marking methods final
+	
+CALLING THE PARENT VERSION OF AN OVERRIDDEN METHOD	
+	- Can call super method on the overriden method.
+	
+OVERRIDING VS. HIDING MEMBERS
+	 - Strictly speaking, hiding members is not a form of polymorphism since	
+	 - hiding members is very sensitive to the reference type and location where the member is being used.
+	 
+DON’T HIDE MEMBERS IN PRACTICE
+		 
+	 

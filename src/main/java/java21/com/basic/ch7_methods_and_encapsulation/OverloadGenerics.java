@@ -7,6 +7,7 @@
  */
 package java21.com.basic.ch7_methods_and_encapsulation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +26,6 @@ public class OverloadGenerics
         public void walk(List integers) {} 
      */
 }
-
 
 
 /*

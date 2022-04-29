@@ -1,4 +1,5 @@
 CONSTRUCTORS
+	 a constructor is a special method that matches the name of the class and has no return type
 INSTANCE INITIALIZER
 
 four code blocks:

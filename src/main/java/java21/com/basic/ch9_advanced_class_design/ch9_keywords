@@ -1,0 +1,55 @@
+INTRODUCING ABSTRACT CLASSES
+- An abstract class is a class that cannot be instantiated and may contain abstract methods.
+- as part of theinstantiation of a nonabstract subclass.
+- An abstract method is a method that does not define an implementation when it is declared\
+- An abstract method must be overriden if there is sub class are extend the abstract class.
+
+OVERRIDE VS. IMPLEMENT
+	- when an abstract method is overridden in a subclass, it is referred to as implementing the method
+	- we tend to use the terms implement and override
+	interchangeably for abstract methods, the term override
+	is more accurate
+	
+	- you can declare new unchecked exceptions but not checked
+	exceptions in the overridden method
+
+DEFINING ABSTRACT METHODS
+	- an abstract class can include all of the same
+	members as a nonabstract class, including variables, static
+	and instance methods, and inner classes.
+	- also include constructors
+	- not actually required to include any abstract methods
+	
+	* The abstract modifier cannot be placed after theclass keyword in a class declaration, nor after the return type
+in a method declaratio
+
+Constructors in Abstract Classes
+	- Even though abstract classes cannot be instantiated, they are
+still initialized through constructors by their subclasses. 
+
+	** abstract classes are initialized with constructors in the same way as nonabstract classes
+	if an abstract class does not provide a constructor, the
+	compiler will automatically insert a default no-argument
+	constructor
+	
+	** a constructor in abstract
+		class can be called only when it is being initialized by a
+		nonabstract subclass
+		
+Invalid Abstract Method Declarations
+Invalid Modifiers
+abstract and final Modifiers
+	- neither the class or method declarations will 
+	compile because they are marked both abstract and final.
+
+abstract and private Modifiers
+	- A method cannot be marked as both abstract and private
+	
+	**
+	While it is not possible to declare a method abstract and
+	private, it is possible (albeit redundant) to declare a
+	method final and private
+	
+abstract and static Modifiers
+	- static method cannot be overridden -> can not go with abstract
+	

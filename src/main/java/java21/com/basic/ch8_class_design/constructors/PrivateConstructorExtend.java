@@ -1,11 +1,11 @@
 /*
- * PrivateContructorClass.java
+ * PrivateConstructorExtend.java
  *
  * Copyright by CRIF AG
  * Zürich
  * All rights reserved.
  */
-package java21.com.basic.ch8_class_design.extend_private_contructor;
+package java21.com.basic.ch8_class_design.constructors;
 
 /**
  * 
@@ -13,14 +13,14 @@ package java21.com.basic.ch8_class_design.extend_private_contructor;
  * @author nhqhien
  * @version $Revision:  $
  */
-public class PrivateContructorClass
+public class PrivateConstructorExtend
 {
-    private PrivateContructorClass()
+    private PrivateConstructorExtend()
     {
         System.out.println("Parent Contructor.");
     }
     
-    public class PrivateContructorInnerClass extends PrivateContructorClass
+    public class PrivateContructorInnerClass extends PrivateConstructorExtend
     {
         public PrivateContructorInnerClass()
         {
@@ -30,11 +30,10 @@ public class PrivateContructorClass
     
     public static void main(String[] args)
     {
-        PrivateContructorInnerClass innerClass = new PrivateContructorClass(). new PrivateContructorInnerClass();
+        PrivateContructorInnerClass innerClass = new PrivateConstructorExtend(). new PrivateContructorInnerClass();
         System.out.println("Instanciated");
     }
 }
-
 
 
 /*
