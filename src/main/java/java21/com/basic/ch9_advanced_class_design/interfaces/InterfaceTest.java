@@ -18,6 +18,7 @@ import java.io.IOException;
 public interface InterfaceTest
 {
     void test() throws IOException;
+    
 }
 
 

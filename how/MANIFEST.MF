@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: 16.0.2 (Oracle Corporation)
+Main-Class: com.build.JavaCommandDemo
+Class-Path: libs/commons-lang3-3.12.0.jar

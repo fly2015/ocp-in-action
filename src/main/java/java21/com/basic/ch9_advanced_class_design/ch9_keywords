@@ -52,4 +52,155 @@ abstract and private Modifiers
 	
 abstract and static Modifiers
 	- static method cannot be overridden -> can not go with abstract
+
+CREATING A CONCRETE CLASS
+	- A concrete class is a nonabstract class
+	- The first concrete subclass that extends an abstract class is required
+	to implement all inherited abstract methods.
+	
+	- An abstract class can extend a nonabstract class, and vice versa
+	- it is not required to provide an implementation when an abstract extend an abstract class.
+	
+Abstract Class Definition Rules
+1. Abstract classes cannot be instantiated.
+2. All top-level types, including abstract classes, cannot be
+marked protected or private.
+3. Abstract classes cannot be marked final.
+4. Abstract classes may include zero or more abstract and
+nonabstract methods.
+5. An abstract class that extends another abstract class inherits all
+of its abstract methods.
+6. The first concrete class that extends an abstract class must
+provide an implementation for all of the inherited abstract
+methods.
+7. Abstract class constructors follow the same rules for
+initialization as regular constructors, except they can be called
+only as part of the initialization of a subclass.
+
+Abstract Method Definition Rules
+
+1. Abstract methods can be defined only in abstract classes or
+interfaces.
+2. Abstract methods cannot be declared private or final.
+3. Abstract methods must not provide a method
+body/implementation in the abstract class in which they are
+declared.
+
+. Implementing an abstract method in a subclass follows the
+same rules for overriding a method, including covariant return
+types, exception declarations, etc.
+
+
+Implementing Interfaces
+- it does allow a class to implement any number of interfaces
+- An interface is an abstract data type are that declares a list of
+abstract methods that any class implementing the interface
+must provide
+- An interface can also include final variables.
+- abstract methods and constant variables are implicitly assumed to be public
+
+**
+With Java 8, interfaces were updated to include static and default methods
+
+- backward compatibility ->to use a new version ->that contains a new method -> without having to modify
+***
+In Java 9, interfaces were updated to support private and private static methods
+-> for code reusability, cannot be called outside
+
+DEFINING AN INTERFACE
+	-  Interface variables are
+referred to as constants because they are assumed to be public,static, and final
+
+	- they can be used outside the interface declaration without requiring an instance of the interface
+	- abstract method assumed to be public
+	- An implicit modifier is a modifier that the compiler
+		automatically adds to a class, interface, method, or variable
+		declaration
+		
+	- an interface is always considered to be abstract, even if it is not marked so.
+	- interfaces are not required to define any methods	
+	- an interface and cannot be instantiated
+	- cannot be marked as final
+	- implement class  must explicitly declare public access modifier
+	- an interface can extend another interface using the xtends keyword
+	- an interface can extend multiple interfaces
+	- do not contain constructors and are not part of instance initialization.
+	- Interface methods without a body are assumed to be abstract
+	and public.
+	
+INSERTING IMPLICIT MODIFIERS
+	Interfaces are assumed to be abstract.
+	Interface variables are assumed to be public, static, and final
+	Interface methods without a body are assumed to be abstract and public.
+	
+	Conflicting Modifiers
+	
+Differences between Interfaces and Abstract Classes
+	- only interfaces make use of implicit modifiers
+
+INHERITING AN INTERFACE
+	- An interface can extend another interface.
+		A class can implement an interface.
+		A class can extend another class whose ancestor implements an interface.
+		
+		a class can implement an interface, a class cannot extend an interface
+
+Mixing Class and Interface Keywords
+		class1 extends class2
+		interface1 extends interface2, interface3, ...
+		class1 implements interface2, interface3, ...
+		
+Duplicate Interface Method Declarations
+		 If two abstract interface
+	methods have identical behaviors—or in this case the same
+	method declaration—you just need to be able to create a single
+	method that overrides both inherited abstract methods at the
+	same time	
+	
+	What if the duplicate methods have different signatures? If the
+	method name is the same but the input parameters are
+	different, there is no conflict because this is considered a
+	method overload. 
+
+	What if the duplicate methods have the same signature but
+	different return types?
+	-> the return types must BE covariant -> else compile errors
+
+	The compiler would also throw an exception if you define an
+	abstract class or interface that inherits from two conflicting
+	abstract types
+	
+POLYMORPHISM AND INTERFACES
+	Abstract Reference Types
+	Casting Interfaces
+		Let’s say you have an abstract reference type variable, which
+		has been instantiated by a concrete subclass. If you need access
+		to a method that is only declared in the concrete subclass, then
+		you will need to cast the interface reference to that type,assuming the cast is supported at runtime
+		
+		- throws a ClassCastException at runtime if 2 object are not relate but implement the same interface
+		- The compiler does not allow a cast from an
+		interface reference to an object reference if the object type does
+		not implement the interface
+		
+	Interfaces and the instanceof Operator
+		- The compiler will only report an unrelated type error for an
+			instanceof operation with an interface on the right side if the
+			reference on the left side is a final class that does not inherit
+			the interface.
+	
+	*compare to abstract class: include implicit modifiers, do not
+		contain constructors, do not participate in the instance
+		initialization process, and support multiple inheritance.
+		
+	* inner or nested interfaces as inner classes
+	
+Inner Classes
+	- member inner class
+	-  it cannot be declared unless it is inside another class.
+	- 4 types:  member inner classes, local classes, anonymous classes, and static nested classes
+	- A member inner class can be declared with all of the same access modifiers as a class member
+	- static members are disallowed in member inner classes unless go with final(constant)
+	The advantage of using a member inner class in this example is
+	that the outer class completely manages the lifecycle of the inner class
 	

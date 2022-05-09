@@ -16,6 +16,7 @@ package java21.com.basic.ch9_advanced_class_design;
 public abstract class AbstractClassTest
 {
      abstract void test();
+     protected abstract void test1();
 }
 
 

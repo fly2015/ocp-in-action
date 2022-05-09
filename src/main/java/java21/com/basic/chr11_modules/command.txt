@@ -1,0 +1,18 @@
+--module-version 
+
+[-p/--module-path]
+[-m/--module]
+
+#compile a module
+	javac -p <module-path> -d <output-directory> <source-directory and files> <module-info.java>
+
+#run a module
+	java -p <module-path> -m <module-name>/<package>.<class name>
+
+#package a module
+	jar cmfv <manifest-path-file> <jar-path>/<file-name.jar> -C <path-contain-class-files> <path-of-files-will-be-packed>
+
+#Run a module from jar without manifest
+	java -p <path-jar-file;module-paths> -m <module-name>/<package>.<class name>
+	
+#Run a module from a runnable jar 

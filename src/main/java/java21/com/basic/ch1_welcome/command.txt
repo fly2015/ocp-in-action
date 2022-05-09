@@ -1,0 +1,17 @@
+
+[-cp/--class-path/-class-path]
+
+#compile
+	javac -cp <class-paths> -d <output-directory> <source-directory and files>
+
+#run
+	java -cp <class-paths>  <full-package-name>.<class name without extension>
+
+#package
+	jar cmfv <manifest-path-file> <jar-path>/<file-name.jar> -C <path-contain-class-files> <path-of-files-will-be-packed>
+
+#Run not runnable jar
+	java -cp <path-jar-file;class-paths> <full-package>.<class name>
+	
+#Run from a runnable jar 
+	java -jar <path-jar-file>

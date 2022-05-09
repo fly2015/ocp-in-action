@@ -37,6 +37,10 @@ public class LocalNested
         localNested.plusX();
         localNested.test(localNested.x);
     }
+    
+    class abc extends LocalNested{
+        
+    }
 }
 
 
