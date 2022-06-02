@@ -45,4 +45,51 @@ Creating and Running a Modular Program
 	CAN A MODULE-INFO.JAVA FILE BE EMPTY?
 	Yes. As a bit of trivia, it was legal to compile any empty file with a .java
 	extension even before modules. The compiler sees there isn’t a class in
-	there and exits without creating a .class file.			
+	there and exits without creating a .class file.	
+	
+ORDER MATTERS!
+	A package must have at least one class in it in order to be exported.
+
+These are "directives" inside module-info.java
+exports
+		- exports a package to other modules
+	exports ... to
+		- export a package to a specific module
+		
+	EXPORTED TYPES	
+		 public classes, interfaces, and enums are exported
+		 public and protected fields and methods
+		 private/ package-private  are not visible
+		 
+requires
+	- current module depends on a specified module
+	REQUIRES TRANSITIVE
+		- A depend on B, C depend on A then A depend on B
+	Effects of requires transitive
+		A, C can not compiled or executed without access to C
+	
+	Duplicate requires Statements
+		Java doesn’t allow you to repeat the same module in a requires clause
+	
+provides
+	- specifies that a class provides an implementation of a service
+	Syntax: provides INTERFACE with IMPL
+	
+uses
+	- specifies that a module is relying on a service
+	Syntax: use INTERFACE
+	- Java allows callers to inspect and call code at runtime with a technique called reflection
+	reflection:  It can even be used to subvert access control!
+	
+opens
+	- the module system requires developers to explicitly allow reflection
+	Syntax: opens PACKAGE
+	 
+
+The java.base module is special, It is automatically added as a dependency to
+all modules
+
+- Oracle recommends using JAR files for most modules
+- jmod is only for working with the JMOD files
+
+				

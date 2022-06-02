@@ -15,4 +15,37 @@
 #Run a module from jar without manifest
 	java -p <path-jar-file;module-paths> -m <module-name>/<package>.<class name>
 	
-#Run a module from a runnable jar 
+#Run a module from a runnable jar
+	jar cmfv <manifest-path-file> <jar-file> -C <outside-directory> <class-file>
+
+
+DESCRIBING MODULES
+JAVA COMMAND	
+#Describing a Module
+	java -p <path-jar-file> -d/--describe-module <module-name>
+	
+#Listing Available Modules
+	java <optional -p <our-modules>> --list-modules	
+
+#Showing Module Resolution
+
+
+THE JAR COMMAND
+	jar -f <module-file-path> -d
+	jar --file <module-file-path> --describe-module
+	output with !module-info.class
+	
+THE JDEPS COMMAND	
+	
+	jdeps -s <module-file-path>
+	deps -summary <module-file-path> (only one dash)
+	jdeps <module-file-path>
+	
+	jdeps -s/-summary --module-path <module-paths> <module-path-file> <module-path-file-dependency>
+	There is not a short form of --module-path in the jdeps command
+	
+	
+THE JMOD COMMAND
+	jmod is only for working with the JMOD files
+	create/extract/describe/list/hash
+		

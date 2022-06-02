@@ -1,8 +1,8 @@
 INTRODUCING ABSTRACT CLASSES
 - An abstract class is a class that cannot be instantiated and may contain abstract methods.
-- as part of theinstantiation of a nonabstract subclass.
+- as part of the instantiation of a non-abstract subclass.
 - An abstract method is a method that does not define an implementation when it is declared\
-- An abstract method must be overriden if there is sub class are extend the abstract class.
+- An abstract method must be overridden if there is sub class are extend the abstract class.
 
 OVERRIDE VS. IMPLEMENT
 	- when an abstract method is overridden in a subclass, it is referred to as implementing the method
@@ -197,10 +197,14 @@ POLYMORPHISM AND INTERFACES
 	
 Inner Classes
 	- member inner class
-	-  it cannot be declared unless it is inside another class.
+	- it cannot be declared unless it is inside another class.
 	- 4 types:  member inner classes, local classes, anonymous classes, and static nested classes
 	- A member inner class can be declared with all of the same access modifiers as a class member
 	- static members are disallowed in member inner classes unless go with final(constant)
 	The advantage of using a member inner class in this example is
-	that the outer class completely manages the lifecycle of the inner class
+	that the outer class completely manages the life cycle of the inner class
 	
+	**** InnerClass cannot have static members because it belongs to an instance (of OuterClass)
+	
+	 
+	and a static members means that this variable belongs to the entire class and not any particular instance.

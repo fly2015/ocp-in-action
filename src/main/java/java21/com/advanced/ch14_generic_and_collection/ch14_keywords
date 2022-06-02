@@ -1,0 +1,75 @@
+Using Method References
+	- are another way to make the code easier to read
+	four formats for method references:
+	- Static methods
+	- Instance methods on a particular instance
+	- Instance methods on a parameter to be determined at runtime
+	- Constructors
+		constructor reference is a special type of method reference that uses new instead of a method
+		
+Using Wrapper Classes
+	autoboxing/unboxing
+	- one advantage of a wrapper class over a primitive is that it can hold a null value
+	
+Using Lists, Sets, Maps, and Queues
+	List: an ordered collection of elements, allows duplicate entries
+	Set: does not allow duplicate entries
+	
+	Queue: is a collection that orders its elements in a specific order for processing
+	A typical queue processes its elements in a first‐in, first‐out order, but other orderings are
+	possible.
+	
+	Map:  is a collection that maps keys to values, with no duplicate keys allowed
+	-  Map doesn't implement the Collection interface
+	
+COMMON COLLECTIONS METHODS
+	boolean add(E element)
+	boolean remove(Object object)
+	boolean isEmpty()
+	int size()
+	void clear()
+	boolean contains(Object object)
+	boolean removeIf(Predicate<? super E> filter)
+	void forEach(Consumer<? super T> action)
+	
+DELETING WHILE LOOPING
+	ConcurrentModificationException
+	
+Using List
+List
+	ArrayList
+	LinkedList
+	
+Creating a List with a Factory
+	Arrays.asList(varargs) -> Returns fixed size list backed by an array -> Can replace elem
+	List.of(varargs) -> returns immutable list
+	List.copyOf(collection)	-> Returns immutablelist with copy of original collection's values
+			
+
+Using Set
+	HashSet
+	TreeSet	
+	
+Using Queue			
+	- FIFO
+	- double‐ended queue: can insert and remove elements from both the front and back of the queue.
+	- LinkedList is that it implements both the List and Queue interfaces -> The trade‐off is that it isn't as
+	efficient as a “pure” queue
+	
+	- ArrayDeque -> pure queue
+	
+Queue Methods No Exception
+	- offer -> add to the back 
+	- poll -> remove and return next elem (or return null if the queue is empty)
+	- peek -> return next element (or return null if the queue is empty)
+	
+Queue Methods With Exception
+	- add -> add to the back of the queue and return true or throw exception.
+	- remove -> Removes and returns next element or throws an exception if empty queue
+	- element -> Returns next element or throws an exception if empty queue
+	
+	
+USING THE MAP INTERFACE
+	HashMap
+	LinkedHashMap	
+	

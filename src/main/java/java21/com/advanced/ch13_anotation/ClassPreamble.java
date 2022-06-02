@@ -16,7 +16,7 @@ import java.lang.annotation.Documented;
  * @version $Revision:  $
  */
 @Documented
-@interface ClassPreamble
+public abstract @interface ClassPreamble
 {
     String author();
     String date();
@@ -26,8 +26,6 @@ import java.lang.annotation.Documented;
     // Note use of array
     String[] reviewers();
 }
-
-
 
 /*
  * Changes:
