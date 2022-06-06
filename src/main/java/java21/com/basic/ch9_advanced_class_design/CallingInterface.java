@@ -22,7 +22,18 @@ public class CallingInterface
         List<String> ls = InterfaceDemo.ls;
         ls.add("avc");
         System.out.println(ls.toString());
+        
+        InterfaceDemo.printSomething();
+        
+        Demo d = new Demo();
+        d.doSomething();
     }
+    
+}
+
+class Demo implements InterfaceDemo
+{
+    
 }
 
 

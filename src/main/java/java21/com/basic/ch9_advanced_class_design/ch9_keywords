@@ -103,6 +103,11 @@ must provide
 With Java 8, interfaces were updated to include static and default methods
 
 - backward compatibility ->to use a new version ->that contains a new method -> without having to modify
+
+Default method -> method has body in the interface, called by implementation
+Diamond problem -> Override the default method without default
+Static method -> Cannot override
+
 ***
 In Java 9, interfaces were updated to support private and private static methods
 -> for code reusability, cannot be called outside

@@ -49,6 +49,9 @@ Creating a List with a Factory
 Using Set
 	HashSet
 	TreeSet	
+	- create an immutable Set in one line or make a copy of an existing one.
+	Set<Character> letters = Set.of('z', 'o', 'o');
+	Set<Character> copy = Set.copyOf(letters);
 	
 Using Queue			
 	- FIFO
@@ -71,5 +74,93 @@ Queue Methods With Exception
 	
 USING THE MAP INTERFACE
 	HashMap
-	LinkedHashMap	
+	LinkedHashMap
+	Map.of("key1", "value1", "key2", "value2")
+	Map.of("key1", "value1", "key2");  -> This code compiles but throws an error at runtime
 	
+	Map.ofEntries(
+		Map.entry("key1", "value1"),
+		Map.entry("key1", "value1"))
+	
+** The data structures that involve sorting do not allow null values.
+	Compile OK -> throw exception at Runtime
+
+OLDER COLLECTIONS
+	Vector -> List
+	Hashtable -> HashMap
+	Stack -> Queue	
+	
+Sorting Data
+	COMPARABLE
+	
+	Keeping compareTo() and equals() Consistent	
+	
+	COMPARATOR
+	COMPARING MULTIPLE FIELDS
+		Helper static methods for building a Comparator:
+			comparing(function)
+			comparingDouble(function)
+			comparingInt(function)
+			comparingLong(function)
+			naturalOrder()
+			reverseOrder()
+			
+		Helper default methods that you can chain to a Comparator to further specify its behavior
+			reversed()
+			thenComparing(Function)
+			thenComparingDouble(Function)
+			thenComparingInt(Function)
+			thenComparingLong(function)
+			
+SORTING AND SEARCHING			
+	REVIEWING BINARYSEARCH()
+	  - one less than the negated index of where the requested value would need to be inserted
+	  
+	  
+Working with Generics
+	formal type parameter
+	
+GENERIC CLASSES	
+	TYPE ERASURE
+	 - after the code compiles, your generics are actually just Object types.
+	 The process of removing the generics syntax from your
+		code is referred to as type erasure.
+	 - Type erasure allows
+		your code to be compatible with older versions of Java
+		that do not contain generics.
+	- The compiler adds the relevant casts for your code to work
+	with this type of erased class.	
+
+GENERIC INTERFACES
+	There are 2 ways a class can approach implementing the interface
+	-  specify the generic type in the implementation class
+	-  create a generic class implement the interface
+	
+	RAW TYPES
+	- The final way is to not use generics at all
+	
+WHAT YOU CAN'T DO WITH GENERIC TYPES
+	- Calling a constructor
+	- Creating an array of that generic type
+	- Calling instanceof
+	- Using a primitive type as  as a generic type parameter
+	- Creating a static variable as a generic type parameter
+	
+	* Most of the limitations are due to type erasure
+	- A reifiable type is a type whose type information is fully available at runtime
+	
+	
+GENERIC METHODS
+	OPTIONAL SYNTAX FOR INVOKING A GENERIC METHOD	
+	
+	- a method declare a generic parameter type, it is
+	independent of the class generics. 	 
+	GenericMethodTricky.java
+
+BOUNDING GENERIC TYPES
+	A bounded parameter type is a generic type that specifies a bound for the generic
+	A wildcard generic type is an unknown generic type represented with a question mark ( ?)
+	
+	- Unbounded wildcard 
+	- Upper bound <extends - point out the biggest>	
+	- lower bound <super - point out the lowest>

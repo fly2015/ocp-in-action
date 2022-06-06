@@ -19,6 +19,27 @@ import java.util.List;
 public interface InterfaceDemo
 {
     List<String> ls = new ArrayList<String>();
+    
+    static void printSomething()
+    {
+        privatePrintSomething1();
+    }
+    
+    default void doSomething()
+    {
+        privatePrintSomething();
+        privatePrintSomething1();
+    }
+    
+    private void privatePrintSomething()
+    {
+        System.out.println("Hello Private");
+    }
+    
+    private static void privatePrintSomething1()
+    {
+        System.out.println("Hello Static Private");
+    }
 }
 
 

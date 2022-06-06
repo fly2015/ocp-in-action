@@ -22,7 +22,6 @@ public class AssertionDemo
         int height = 2;
         int length = 100;
         
-        
         assert(2 == height);
         assert 100.0 == length : "Problem with length";
     }
