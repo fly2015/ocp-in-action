@@ -40,14 +40,21 @@ public class StaticInnerClassDemo
         {
             return z;
         }
+        
+        public static StaticInnerClassDemo init()
+        {
+            return new StaticInnerClassDemo();
+        }
     }
     
     public static void main(String[] args)
     {
         InnerDemo x = new InnerDemo();
         System.out.println(x.getX());
-        
+
         System.out.println(StaticInnerClassDemo.InnerDemo.getF());
+        
+        StaticInnerClassDemo init = StaticInnerClassDemo.InnerDemo.init();
     }
 }
 

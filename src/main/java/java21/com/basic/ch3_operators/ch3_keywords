@@ -24,7 +24,7 @@ Understanding Java Operators
 		predecrement/ post-increment
 	
 	Binary Arithmetic Operators
-		modulus: For a given divisor y, he modulus operation results in a value between 0 and (y - 1) for positive dividends.
+		modulus: For a given divisor y, the modulus operation results in a value between 0 and (y - 1) for positive dividends.
 		floor value ->  the value without anything after the decimal point
 		
 	

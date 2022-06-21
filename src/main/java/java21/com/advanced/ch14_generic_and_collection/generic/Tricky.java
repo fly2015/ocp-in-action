@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import java21.com.advanced.ch14_generic_and_collection.generic.sdo.Animal;
+import java21.com.advanced.ch14_generic_and_collection.generic.sdo.Cat;
 import java21.com.advanced.ch14_generic_and_collection.generic.sdo.Dog;
 
 /**
@@ -35,19 +36,20 @@ public class Tricky
         //tricky 2
         List<Animal> la = new ArrayList<Animal>();
         la.add(new Dog());
+        la.add(new Cat());
         la.add(new Animal());
         
         //tricky 3
         List<Dog> ld = new ArrayList<Dog>();
         //List<Animal> lad = ld; // DO NOT COMPLIE
-        
+    
         // tricky 4
         Collection<?> c = new ArrayList<String>();
         c.add(null);
         
         // tricky 5
         List<?> l = new ArrayList<String>();
-       // Object x = l.get(0);
+        Object x = l.get(0);
         
         // tricky 6
         List<?> lany = new ArrayList<>();
@@ -94,20 +96,23 @@ public class Tricky
         set.add(new Object());
         
       
-        
+        // tricky 10
         List<? super ClassCastException> list1 = new ArrayList<Exception>();
         list1.add(new ClassCastException());
-        //  list1.add(new Exception());
+        // list1.add(new Exception()); // DO NOT COMPILE
+        
+        // tricky 11
         List<? super Number> list2 = new ArrayList<Object>();
         List<? super Number> list3 = new ArrayList<Number>();
         list2.add(10);
         list2.add(10L);
+        // list2.add(new Object());  // DO NOT COMPILE
         List<? extends Number> list4 = new ArrayList<Number>();
         Number number = list4.get(0);
-        // list2.add(new Object());
+       
         
-        // tricky 10
-        //List<Object> l1 = new ArrayList<? extends Object>(); -> BDO NOT COMPILE
+        // tricky 12
+        //List<Object> l1 = new ArrayList<? extends Object>(); -> DO NOT COMPILE
     }
     
     public static void addAllDemo(List< ? extends Number> listB)

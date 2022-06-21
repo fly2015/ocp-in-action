@@ -39,6 +39,7 @@ public class InnerClassDemo
     
     public static void main(String[] args)
     {
+        int z = InnerClassDemo1.z;
         InnerClassDemo1 innerClassDemo = new InnerClassDemo(). new InnerClassDemo1(); //access inner class need to via outer instance
         InnerClassDemo.doLoad();
     }

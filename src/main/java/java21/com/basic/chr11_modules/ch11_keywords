@@ -64,14 +64,14 @@ exports
 requires
 	- current module depends on a specified module
 	REQUIRES TRANSITIVE
-		- A depend on B, C depend on A then A depend on B
+		- A depend on B, C depend on A then C depend on B
 	Effects of requires transitive
 		A, C can not compiled or executed without access to C
 	
 	Duplicate requires Statements
 		Java doesn’t allow you to repeat the same module in a requires clause
 	
-provides
+provides ... with
 	- specifies that a class provides an implementation of a service
 	Syntax: provides INTERFACE with IMPL
 	
@@ -81,9 +81,12 @@ uses
 	- Java allows callers to inspect and call code at runtime with a technique called reflection
 	reflection:  It can even be used to subvert access control!
 	
-opens
+open/opens/opens ..to
+	- allow full reflection as older versions of Java did
+	open module my.module {}
 	- the module system requires developers to explicitly allow reflection
 	Syntax: opens PACKAGE
+	- opens com.my.package to moduleOne, moduleTwo, etc.;
 	 
 
 The java.base module is special, It is automatically added as a dependency to

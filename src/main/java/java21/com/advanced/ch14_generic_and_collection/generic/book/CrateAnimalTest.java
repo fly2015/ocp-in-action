@@ -23,10 +23,13 @@ public class CrateAnimalTest
         // Case 1
         CrateAnimal<Animal> crateAnimal1 = new CrateAnimal<Animal>();
         crateAnimal1.packPackage(new Dog());
+        crateAnimal1.packPackage(new Animal());
+        Animal emptyPackage = crateAnimal1.emptyPackage();
         
         // Case 2
         CrateAnimal<Dog> crateAnimal2 = new CrateAnimal<Dog>();
         crateAnimal2.packPackage(new Dog());
+        Dog emptyPackage2 = crateAnimal2.emptyPackage();
         
         // Case 3
         CrateAnimal<?> crateAnimal3 = new CrateAnimal<Animal>();
@@ -46,7 +49,7 @@ public class CrateAnimalTest
         // Case 6
         CrateAnimal<? super Dog> crateAnimal6 = new CrateAnimal<Dog>();
         crateAnimal5.packPackage(new Dog()); //-> OK lowest type is a upper bound can accepted
-        
+        Animal emptyPackage6 = crateAnimal6.emptyPackage();
     }
 }
 

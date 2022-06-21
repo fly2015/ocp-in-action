@@ -66,13 +66,14 @@ INNER CLASS (member inner class)
 	 - access members of the outer class including private members
 	 - *** have the same variable names as outer classes	 
 	 -> There is a special way of calling this to say which variable you want to access 
-	 AccessSameNameVariableUsingThis.class
+	 AccessSameNameVariableUsingThis.java
 	 - can declare abstract access modifier and mark final
+	 - can not access instance of the inner without an instance of enclosing class
 	 
 STATIC NESTED CLASS
 	 is a static type defined at the member level of a class
 	 same top level except: 
-	 - can be instantiated without an instance of the enclosing class
+	 - can be instantiated without an instance of the enclosing class <******* 10 stars>
 	 - can't access instance variables or methods in the outer class directly
 	 	-> can be done but requires an explicit reference to an outer class variable
 	 

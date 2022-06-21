@@ -17,9 +17,12 @@ public class GenericDemo<T>
 {
     T t;
     
+    T [] tarr;
+    
     public GenericDemo(T t)
     {
         this.t = t;
+        this.tarr = null;
     }
     
     

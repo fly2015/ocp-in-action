@@ -164,3 +164,14 @@ BOUNDING GENERIC TYPES
 	- Unbounded wildcard 
 	- Upper bound <extends - point out the biggest>	
 	- lower bound <super - point out the lowest>
+	
+Passing Generic Argument
+	- Could not use wildcard as a return type of method.
+	- A wildcard must have a ? in it.	
+	
+	
+	
+parameterized type
+type parameter
+type argument
+type inference	

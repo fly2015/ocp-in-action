@@ -11,13 +11,21 @@
 
 #package a module
 	jar cmfv <manifest-path-file> <jar-path>/<file-name.jar> -C <path-contain-class-files> <path-of-files-will-be-packed>
-
+	jar cmfv <manifest-path-file> <jar-path>/<file-name.jar> -C <path-contain-class-files> <path-of-files-will-be-packed> <path-contain-class-files/module-info.class>
+	jar cmfv <manifest-path-file> <jar-path>/<file-name.jar> <path-of-class-files>
+	e.g. jar cfv ./jars/zoo.tours.api.jar -C ./mods .
+		 jar cfv ./jars/zoo.tours.api.jar .
+		 jar cfv ./mods/zoo.tours.reservations.jar -C ./classes  ./zoo/tours/reservations ./classes/module-info.class
+		 
 #Run a module from jar without manifest
 	java -p <path-jar-file;module-paths> -m <module-name>/<package>.<class name>
 	
 #Run a module from a runnable jar
 	jar cmfv <manifest-path-file> <jar-file> -C <outside-directory> <class-file>
 
+
+#
+jar --list --file <jar-file-path>
 
 DESCRIBING MODULES
 JAVA COMMAND	
