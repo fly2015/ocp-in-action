@@ -123,12 +123,9 @@ Working with Generics
 GENERIC CLASSES	
 	TYPE ERASURE
 	 - after the code compiles, your generics are actually just Object types.
-	 The process of removing the generics syntax from your
-		code is referred to as type erasure.
-	 - Type erasure allows
-		your code to be compatible with older versions of Java
-		that do not contain generics.
-	- The compiler adds the relevant casts for your code to work
+	 The process of removing the generics syntax from your code is referred to as type erasure.
+	 - Type erasure allows your code to be compatible with older versions of Javathat do not contain generics.
+	 - The compiler adds the relevant casts for your code to work
 	with this type of erased class.	
 
 GENERIC INTERFACES
@@ -153,8 +150,7 @@ WHAT YOU CAN'T DO WITH GENERIC TYPES
 GENERIC METHODS
 	OPTIONAL SYNTAX FOR INVOKING A GENERIC METHOD	
 	
-	- a method declare a generic parameter type, it is
-	independent of the class generics. 	 
+	- a method declare a generic parameter type, it is independent of the class generics. 	 
 	GenericMethodTricky.java
 
 BOUNDING GENERIC TYPES

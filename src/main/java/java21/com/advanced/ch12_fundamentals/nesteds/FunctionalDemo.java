@@ -1,5 +1,5 @@
 /*
- * FunctionalDemo.java
+ * CopyFileDemo.java
  *
  * Copyright by CRIF AG
  * Zürich
