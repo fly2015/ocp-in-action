@@ -155,4 +155,21 @@ DEALING WITH EXCEPTIONS
 	 
 	
 
-	 	 
+Using Additional Options
+	ResultSet.TYPE_FORWARD_ONLY			 ->  Can go through the ResultSet only one row at a time
+	ResultSet.TYPE_SCROLL_INSENSITIVE	 ->  Can go through the ResultSet in any
+											 order but will not see changes made to the underlying database table	
+	ResultSet.TYPE_SCROLL_SENSITIVE		 ->  Can go through the ResultSet in any order
+											 and will see changes made to the underlying database table
+	
+	ResultSet.CONCUR_READ_ONLY           ->  The ResultSet cannot be updated.
+	ResultSet.CONCUR_UPDATABLE			 ->  The ResultSet can be updated.
+	
+
+Controlling Data with Transactions
+	Autocommit Edge Cases
+	- setAutoCommit(true)  -> each statement is automatically committed
+	- setAutoCommit(false) -> close connection without action, the behavior is unpredict(commit/roll back) 	
+	
+Bookmarking with Savepoints
+		

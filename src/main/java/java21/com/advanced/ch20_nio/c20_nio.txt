@@ -1,6 +1,6 @@
 - NIO.2 is a replacement for the legacy java.io.File
 - The goal of the API is to provide a more intuitive, more feature‐rich API for working
-	with files and directories.
+with files and directories.
 
 - Java includes an NIO library that uses buffers and channels
 
