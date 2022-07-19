@@ -33,8 +33,6 @@ public class TryWithResourceDemoTrick
     }
 }
 
-
-
 /*
  * Changes:
  * $Log: $

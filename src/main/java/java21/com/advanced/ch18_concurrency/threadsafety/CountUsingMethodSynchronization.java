@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
  */
 public class CountUsingMethodSynchronization
 {
-    private static int count = 0;
+    private volatile static int count = 0;
     public synchronized void increaseCount()
     {
         System.out.println(count++);

@@ -29,6 +29,11 @@ public class SingleThreadExecutorDemo
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         try
         {
+            
+            var result = executorService.submit(() ->  System.out.println("Wake Staff"));
+            System.out.println(result.get()); // w4
+            
+            
             // Executes Runnable task at some point in future
             Runnable command = () -> System.out.println(Thread.currentThread().getName());
             executorService.execute(command);

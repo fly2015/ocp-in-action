@@ -2,7 +2,8 @@ Method signature: method name and input parameters
 ACCESS MODIFIERS
 	private: the method can be called only from within the same class
 	Default (Package-Private) Access
-	protected
+	protected  The protected modifier means the method can be called only from classes in the same package or subclasses
+				**  it can only be accessed from a subclass reference or in the same package
 	public
 
 OPTIONAL SPECIFIERS

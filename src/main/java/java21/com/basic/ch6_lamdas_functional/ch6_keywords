@@ -61,3 +61,5 @@ Calling APIs with Lambdas
 USING FOREACH() WITH A MAP DIRECTLY	
 	Use BiConsumer
 	
+	
+*** Autoboxing works for collections not inferring predicates	

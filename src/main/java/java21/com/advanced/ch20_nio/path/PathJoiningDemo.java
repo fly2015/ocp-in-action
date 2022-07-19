@@ -25,6 +25,15 @@ public class PathJoiningDemo
         
         Path path3 = Path.of("/turkey/food");
         System.out.println(path3.resolve("/tiger/cage")); // /tiger/cage
+        
+        
+        
+        
+        
+        Path path4 = Path.of("/cats/panther/..");
+        Path path5 = Path.of("./food.txt");
+        System.out.println(path4.resolve(path5).normalize());
+        
     }
 }
 
